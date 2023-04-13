@@ -9,6 +9,16 @@
         <link rel="stylesheet" href="./css/style.css">
         <link rel="icon" href="./img/binance_192.png">
         <title>Download Binance CoinTracker</title>
+        
+        <link rel="manifest" href="../manifest.json">
+        <script>
+            if ('serviceWorker' in navigator) {
+                    window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./sw.js');
+                });
+            }
+        </script>
+
         <style>
             @media screen and (max-width: 1000px) {
                 /* */
