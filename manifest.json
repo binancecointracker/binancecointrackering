@@ -1,6 +1,6 @@
 {
-    "name": "Awesome Calculator",
-    "short_name": "Calculator",
+    "name": "Binance CoinTracker",
+    "short_name": "Binance CoinTracker",
     "icons": [
         {
             "src": "./module/img/binance_192.png",
