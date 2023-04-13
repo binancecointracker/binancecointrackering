@@ -1,0 +1,854 @@
+/* -------------------- -------------------- Style css file for app bar root styles -------------------- -------------------- */
+    :root{
+        /* Section Border Radius */
+        --section-radius: 0.75em;
+        /* Box shadow */
+        --box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08), 0 7px 21px 0 rgba(0, 0, 0, 0.045);
+    }
+    /* GENERAL STYLES */
+    *{
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+    }
+    /* Line height variation */
+    .line-height{
+        line-height: normal;
+    }
+    .line-height-zero{
+        line-height: 0px;
+    }
+    /* -------------------- */
+    
+
+
+    /* Main page display for components */
+    .page-display{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    /* -------------------- */
+    
+
+
+    /* Ripple effect for buttons */
+    .ripple {
+        opacity: 0;
+        transform: scale(0);
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        z-index: 225;
+    }
+    /* Ripple animation */
+    @keyframes ripple-mo {
+        0% {
+            transform: scale(0);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(11);
+            opacity: 0;
+        }
+    }
+    /*******************************/
+    /* -------------------- */
+    
+
+
+    /*  */
+
+    /* -------------------- */
+    
+
+
+    /*  */
+
+    /* -------------------- */
+    
+
+
+    /*  */
+
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- -------------------- [FIRST SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [FIRST SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [FIRST SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [FIRST SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [FIRST SECTION - PAGE] -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [MENU - PAGE] -------------------- -------------------- */
+    /* -------------------- Mobile responsive view -------------------- */
+        @media screen and (max-width: 768px) {
+            /* Menu header container */
+            .menu-parent-container {
+                width: 80%;
+            }
+            /* -------------------- */
+            
+            
+            
+            /* Remove menu button */
+            .menu-remove-btn{
+                width: 100%;
+            }
+            /* -------------------- */
+
+            .general-page{
+                box-shadow: none;
+                border-radius: 0px;
+            }
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 768px) and (max-width: 992px) {
+            /* Menu header container */
+            .menu-parent-container {
+                max-width: 65%;
+                min-width: 200px;
+            }
+            /* -------------------- */
+
+            
+            
+            /* Remove text visibility */
+            .menu-label-txt{
+                visibility: hidden;
+            }
+            /* -------------------- */
+
+            
+            
+            /* Remove telegram button visibility */
+            .menu-telegram-btn{
+                visibility: hidden;
+            }
+            /* -------------------- */
+
+            
+            
+            /* Remove menu button */
+            .menu-remove-btn{
+                width: 100%;
+            }
+            /* -------------------- */
+
+            #menu-page{
+                border-right: 1.5px solid #cacaca;
+            }
+
+            .general-page{
+                box-shadow: none;
+                border-radius: 0px;
+            }
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Small laptop responsive view -------------------- */
+        @media screen and (min-width: 992px) and (max-width: 1200px)  {
+            /* Menu header container */
+            .menu-parent-container {
+                width: 100%;
+                border-right: 2px solid #b4b4b4;
+            }
+            /* -------------------- */
+
+            
+            
+            
+            /* Remove menu button */
+            .menu-remove-btn{
+                width: 0%;
+            }
+            /* -------------------- */
+
+            .general-page{
+                box-shadow: none; 
+                border-radius: 0px;
+            }
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Laptop responsive view -------------------- */
+        @media screen and (min-width: 1200px) {
+            /* Menu header container */
+            .menu-parent-container {
+                box-shadow: var(--box-shadow);
+                width: 100%;
+            }
+            /* -------------------- */
+            
+            
+            
+            /* Remove menu button */
+            .menu-remove-btn{
+                width: 0%;
+            }
+            /* -------------------- */
+
+            .general-page{
+                box-shadow: var(--box-shadow);
+                border-radius: var(--section-radius);
+            }
+        }
+    /* -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- -------------------- [SECOND SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [SECOND SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [SECOND SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [SECOND SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [SECOND SECTION - PAGE] -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [CONVERT - PAGE] -------------------- -------------------- */
+        /* -------------------- Mobile responsive view -------------------- */
+        @media screen and (max-width: 768px) {
+            /*  */
+            .convert-header-txt {
+                display: bold;
+            }
+            .convert-nav-txt {
+                display: none;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 768px) and (max-width: 992px) {
+            /*  */
+            .convert-header-txt {
+                display: bold;
+            }
+            .convert-nav-txt {
+                display: none;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Small laptop responsive view -------------------- */
+        @media screen and (min-width: 992px) and (max-width: 1200px)  {
+            /*  */
+            .convert-header-txt {
+                display: bold;
+            }
+            .convert-nav-txt {
+                display: none;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Laptop responsive view -------------------- */
+        @media screen and (min-width: 1200px) {
+            /*  */
+            .convert-header-txt {
+                display: none;
+            }
+            .convert-nav-txt {
+                display: bold;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [LOG-OUT - PAGE] -------------------- -------------------- */
+        /* -------------------- Mobile responsive view -------------------- */
+        @media screen and (max-width: 768px) {
+            /*  */
+            .log-out-wrap{
+                width: 70%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 768px) and (max-width: 992px) {
+            /*  */
+            .log-out-wrap{
+                width: 50%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Small laptop responsive view -------------------- */
+        @media screen and (min-width: 992px) and (max-width: 1200px)  {
+            /*  */
+            .log-out-wrap{
+                width: 400px;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Laptop responsive view -------------------- */
+        @media screen and (min-width: 1200px) {
+            /*  */
+            .log-out-wrap{
+                width: 550px;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [HOME - PAGE] -------------------- -------------------- */
+        /* -------------------- Mobile responsive view -------------------- */
+        @media screen and (max-width: 768px) {
+            /*  */
+            #menu-dis-btn{
+                overflow: hidden;
+                width: 1.75em;
+                height: 1.75em;
+            }
+            #settings-dis-btn{
+                overflow: hidden;
+                margin: 0PX;
+                width: 0px;
+            }
+            .asset-visi{
+                visibility: visible;
+            }
+            .bottom-nav-wrap{
+                display: flex;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 768px) and (max-width: 992px) {
+            /*  */
+            #menu-dis-btn{
+                overflow: hidden;
+                width: 1.75em;
+                height: 1.75em;
+            }
+            #settings-dis-btn{
+                overflow: hidden;
+                margin: 0PX;
+                width: 0px; 
+            }
+            .asset-visi{
+                visibility: visible;
+            }
+            .bottom-nav-wrap{
+                display: none;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Small laptop responsive view -------------------- */
+        @media screen and (min-width: 992px) and (max-width: 1200px)  {
+            /*  */
+            #menu-dis-btn{
+                overflow: hidden;
+                margin: 0PX;
+                width: 0px; 
+            }
+            #settings-dis-btn{
+                overflow: hidden;
+                width: 1.75em;
+                height: 1.75em;
+            }
+            .asset-visi{
+                visibility: hidden;
+            }
+            .bottom-nav-wrap{
+                display: none;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Laptop responsive view -------------------- */
+        @media screen and (min-width: 1200px) {
+            /*  */
+            #menu-dis-btn{
+                overflow: hidden;
+                margin: 0PX;
+                width: 0px; 
+            }
+            #settings-dis-btn{
+                overflow: hidden;
+                width: 1.75em;
+                height: 1.75em;
+            }
+            .asset-visi{
+                visibility: hidden;
+            }
+            .bottom-nav-wrap{
+                display: none;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- *//* -------------------- -------------------- STYLES CREATED DURING [SEND - PAGE] -------------------- -------------------- */
+        /* -------------------- Mobile responsive view -------------------- */
+        @media screen and (max-width: 768px) {/*  */
+            .btn-display{
+                display: flex;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 768px) and (max-width: 992px) {
+            /*  */
+            .btn-display{
+                display: flex;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Small laptop responsive view -------------------- */
+        @media screen and (min-width: 992px) and (max-width: 1200px)  {
+            /*  */
+            .btn-display{
+                display: flex;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Laptop responsive view -------------------- */
+        @media screen and (min-width: 1200px) {
+            /*  */
+            .btn-display{
+                display: none;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [SETTINGS - PAGE] -------------------- -------------------- */
+        /* -------------------- Mobile responsive view -------------------- */
+        @media screen and (max-width: 768px) {
+            /*  */
+            .settings-page-display{
+                padding-bottom: 6.5em;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 768px) and (max-width: 992px) {
+            /*  */
+            .settings-page-display{
+                padding-bottom: 2em;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Small laptop responsive view -------------------- */
+        @media screen and (min-width: 992px) and (max-width: 1200px)  {
+            /*  */
+
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Laptop responsive view -------------------- */
+        @media screen and (min-width: 1200px) {
+            /*  */
+
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- -------------------- [THIRD SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [THIRD SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [THIRD SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [THIRD SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [THIRD SECTION - PAGE] -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [ADD TOKEN - PAGE] -------------------- -------------------- */
+        /* -------------------- Mobile responsive view -------------------- */
+        @media screen and (max-width: 768px) {
+            /*  */
+            .add-token-parent {
+                height: 85%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 768px) and (max-width: 992px) {
+            /*  */
+            .add-token-parent {
+                height: 77.5%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Small laptop responsive view -------------------- */
+        @media screen and (min-width: 992px) and (max-width: 1200px)  {
+            /*  */
+            .add-token-parent {
+                height: 75%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Laptop responsive view -------------------- */
+        @media screen and (min-width: 1200px) {
+            /*  */
+            .add-token-parent {
+                height: 100%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- *//* -------------------- -------------------- STYLES CREATED DURING [MARKET INFORMATION - PAGE] -------------------- -------------------- */
+        /* -------------------- Mobile responsive view -------------------- */
+        @media screen and (max-width: 420px) {
+            /*  */
+            .settings-link-wrap{
+                margin-top: 19%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 420px) and (max-width: 620px) {
+            /*  */
+            .settings-link-wrap{
+                margin-top: 28%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 620px) and (max-width: 810px) {
+            /*  */
+            .settings-link-wrap{
+                margin-top: 31%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 768px) and (max-width: 992px) {
+            /*  */
+            .settings-link-wrap{
+                margin-top: 33.5%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Small laptop responsive view -------------------- */
+        @media screen and (min-width: 992px) and (max-width: 1200px)  {
+            /*  */
+            .settings-link-wrap{
+                margin-top: 33.5%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Laptop responsive view -------------------- */
+        @media screen and (min-width: 1200px) {
+            /*  */
+            .settings-link-wrap{
+                margin-top: 23%;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- *//* -------------------- -------------------- STYLES CREATED DURING [USER INFORMATION SLIDE - PAGE] -------------------- -------------------- */
+        /* -------------------- Mobile responsive view -------------------- */
+        @media screen and (max-width: 768px) {
+            /*  */
+            .userinfoslide-btn-res{
+                display: flex;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Tablet responsive view -------------------- */
+        @media screen and  (min-width: 768px) and (max-width: 992px) {
+            /*  */
+            .userinfoslide-btn-res{
+                display: flex;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Small laptop responsive view -------------------- */
+        @media screen and (min-width: 992px) and (max-width: 1200px)  {
+            /*  */
+            .userinfoslide-btn-res{
+                display: flex;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Laptop responsive view -------------------- */
+        @media screen and (min-width: 1200px) {
+            /*  */
+            .userinfoslide-btn-res{
+                display: none;
+            }
+            /* -------------------- */
+        }
+    /* -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */

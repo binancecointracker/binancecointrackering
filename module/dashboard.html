@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0">
+
+        <!-- Css stylesheet links below -->
+        <!-- Bootstrap link -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- External stylesheet -->
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/structure.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+        <style id="dynamicStyles"></style>
+
+        <!-- Firebase script -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase.js"></script>
+
+        <!-- Title of the page -->
+        <title>Binance CoinTracker</title>
+    </head>
+    <body>
+        <div id="preloader-background" style="justify-content: center;">
+			<div class="preload">
+				<img x="0px" y="0px" width="50px" style="position: absolute;" height="50px" src="img/binance.png" alt="" srcset="">
+				<div id="circle-loader"></div>
+			</div>
+		</div>
+        
+        <!-- Responsive design for the structure of the website -->
+        <div id="page-parent-content" class="parent-container custom-row">
+            <!-- -------------------- -------------------- The nav links that appers when the screen is above 1440px -------------------- -------------------- -->
+            <div class="responsive-navigation-menu">
+                <div class="container">
+                    <!-- Upper Button -->
+                    <div class="res-nav-wrap">
+                        <div class="res-nav-btn" id="res-up" onclick="resUp()" style="margin-bottom: 1em;">
+                            <img src="img/home.png" class="img-fluid">
+                        </div>
+                        <div class="res-nav-btn" onclick="resDown()" id="res-down" style="margin-top: 0.5em;">
+                            <img src="img/settings.png" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--   -------------------- -------------------- -------------------- -------------------- -------------------- -->
+
+
+
+
+            
+            
+
+
+
+
+            <!--  -------------------- -------------------- Main-page disp[lay screen] -------------------- -------------------- -->
+            <div class="main-screen-display">
+                
+                <!--  -------------------- -------------------- Parent container of apps home page -------------------- -------------------- -->
+                    <section id="pageParent" class="one-page-parent">
+                        <div class="custom-row structure-main-con">
+                            
+                            <!-- -------------------- FIRST SECTION -------------------- -->
+                                <section class="first-section first-section-change p-2" id="first-section">
+
+                                    <!-- SETTINGS PAGE - DISPLAY -->
+                                    <div id="settings-first-page" class="general-page page-hide">
+                                        <settings-page class="page-display"></settings-page>
+                                    </div>
+                                    <!--  -------------------- -->
+
+
+
+                                    <!-- MENU DISPLAY -->
+                                    <div id="menu-page" class="general-page page-show">
+                                        <menu-page class="page-display"></menu-page>
+                                    </div>
+                                    <!--  -------------------- -->
+
+                                </section>
+                            <!-- -------------------- -------------------- -------------------- -->
+                            <!-- -------------------- -------------------- -------------------- -->
+
+
+
+
+
+                            <!-- Spacer for fixed Hamburger Menu Structure -->
+                            <div id="structure-spacer"></div>
+                            <!--  -------------------- -->
+                            <!--  -------------------- -->
+
+
+
+
+                            
+                            <!--  -->
+                                <div class="custom-row">
+
+                                    <!-- -------------------- SECOND SECTION -------------------- -->
+                                        <section class="second-section second-section-change" id="second-section">
+
+                                            <!-- SETTINGS PAGE - DISPLAY -->
+                                            <div id="settings-second-page" class="general-page page-hide">
+                                                <settings-page class="page-display"></settings-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+
+
+                                            <!-- HOME PAGE -->
+                                            <div id="home-page" class="general-page page-show">
+                                                <home-page class="page-display"></home-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- ACCOUNT SECURITY PAGE - DISPLAY -->
+                                            <div id="account-page" class="general-page page-hide">
+                                                <account-page class="page-display"></account-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- ASSETS PAGE - DISPLAY -->
+                                            <div id="assets-page" class="general-page page-hide">
+                                                <assets-page class="page-display"></assets-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- CONVERT PAGE - DISPLAY -->
+                                            <div id="convert-page" class="general-page page-hide">
+                                                <convert-page class="page-display"></convert-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- HELP PAGE - DISPLAY -->
+                                            <div id="help-page" class="general-page page-hide">
+                                                <help-page class="page-display"></help-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- MESSAGE PAGE - DISPLAY -->
+                                            <div id="message-page" class="general-page page-hide">
+                                                <message-page class="page-display"></message-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- NOTIFICATION PAGE - DISPLAY -->
+                                            <div id="notification-page" class="general-page page-hide">
+                                                <notification-page class="page-display"></notification-page>
+                                            </div>
+                                            <!-- -------------------- -->
+
+                                            
+
+                                            <!-- REFERRAL PAGE - DISPLAY -->
+                                            <div id="referral-page" class="general-page page-hide">
+                                                <referral-page class="page-display"></referral-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- TOKEN PAGE - DISPLAY -->
+                                            <div id="token-page" class="general-page page-show">
+                                                <token-page class="page-display"></token-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- TRANSACTION HISTORY PAGE - DISPLAY -->
+                                            <div id="transaction-history-page" class="general-page page-hide">
+                                                <transaction-history-page class="page-display"></transaction-history-page>
+                                            </div>
+                                            <!--  -------------------- -->
+                                        </section>
+                                    <!-- -------------------- -------------------- -------------------- -->
+                                    <!-- -------------------- -------------------- -------------------- -->
+
+
+
+
+
+
+
+
+
+                                    
+                                    
+                                    <!-- -------------------- THIRD SECTION -------------------- -->
+                                        <section class="third-section third-section-change p-2" id="third-section">
+
+                                            <!-- ADD TOKEN PAGE - DISPLAY -->
+                                            <div id="add-token-page" class="general-page page-show">
+                                                <add-token-page class="page-display"></add-token-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- ABOUT PAGE - DISPLAY -->
+                                            <div id="about-page" class="general-page page-hide">
+                                                <about-page class="page-display"></about-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- BIOLOGICAL AUTHENTICATION PAGE - DISPLAY -->
+                                            <div id="bioauth-page" class="general-page page-hide">
+                                                <bio-auth-page class="page-display"></bio-auth-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- CHANGE PASSWORD PAGE - DISPLAY -->
+                                            <div id="change-password-page" class="general-page page-hide">
+                                                <change-password-page class="page-display"></change-password-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- CONVERT SELECT PAGE - DISPLAY -->
+                                            <div id="convert-select-page" class="general-page page-hide">
+                                                <convert-select-page class="page-display"></convert-select-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- FORGOT PASSWORD PAGE - DISPLAY -->
+                                            <div id="forgot-password-page" class="general-page page-hide">
+                                                <forget-password-page class="page-display"></forget-password-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- INVITE PAGE - DISPLAY -->
+                                            <div id="invite-page" class="general-page page-hide">
+                                                <invite-page class="page-display"></invite-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- LANGUAGE PAGE - DISPLAY -->
+                                            <div id="language-page" class="general-page page-hide">
+                                                <language-page class="page-display"></language-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- MARKET INFORMATION PAGE - DISPLAY -->
+                                            <div id="market-info-page" class="general-page page-hide">
+                                                <market-info-page class="page-display"></market-info-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- PASSCODE PAGE - DISPLAY -->
+                                            <div id="passcode-page" class="general-page page-hide">
+                                                <passcode-page class="page-display"></passcode-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- PATTERN PAGE - DISPLAY -->
+                                            <div id="pattern-page" class="general-page page-hide">
+                                                <pattern-page class="page-display"></pattern-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- PAYMENT PIN PAGE - DISPLAY -->
+                                            <div id="pay-pin-page" class="general-page page-hide">
+                                                <pay-pin-page class="page-display"></pay-pin-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- PROFILE PAGE - DISPLAY -->
+                                            <div id="profile-page" class="general-page page-hide">
+                                                <profile-page class="page-display"></profile-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- RECEIVE PAGE - DISPLAY -->
+                                            <div id="receive-page" class="general-page page-hide">
+                                                <receive-page class="page-display"></receive-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- REFERRAL HISTORY PAGE - DISPLAY -->
+                                            <div id="refhis-page" class="general-page page-hide">
+                                                <refhis-page class="page-display"></refhis-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- REMEMBER PASSWORD PAGE - DISPLAY -->
+                                            <div id="remember-password-page" class="general-page page-hide">
+                                                <remember-password-page class="page-display"></remember-password-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- RULES PAGE - DISPLAY -->
+                                            <div id="rules-page" class="general-page page-hide">
+                                                <rules-page class="page-display"></rules-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- SELECT PAGE - DISPLAY -->
+                                            <div id="select-send-page" class="general-page page-hide">
+                                                <select-send-page class="page-display"></select-send-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- SELECT PAGE - DISPLAY -->
+                                            <div id="select-receive-page" class="general-page page-hide">
+                                                <select-receive-page class="page-display"></select-receive-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- SEND PAGE - DISPLAY -->
+                                            <div id="send-page" class="general-page page-hide">
+                                                <send-page class="page-display"></send-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- SUPPORT PAGE - DISPLAY -->
+                                            <div id="support-page" class="general-page page-hide">
+                                                <support-page class="page-display"></support-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- USER INFORMATION PAGE - DISPLAY -->
+                                            <div id="user-info-slide-page" class="general-page">
+                                                <user-info-slide-page class="page-display"></user-info-slide-page>
+                                            </div>
+                                            <!--  -------------------- -->
+
+                                            
+
+                                            <!-- VERIFICATION PAGE - DISPLAY -->
+                                            <div id="verification-page" class="general-page page-hide">
+                                                <verification-page class="page-display"></verification-page>
+                                            </div>
+                                            <!--  -------------------- -->
+                                        </section>
+                                    <!-- -------------------- -------------------- -------------------- -->
+                                    <!-- -------------------- -------------------- -------------------- -->
+
+                                </div>
+                            <!--  -->
+
+                        </div>
+                    </section>
+                <!--  -------------------- -------------------- -------------------- -------------------- -------------------- -->
+
+
+
+                
+                
+                
+
+
+
+
+                <!--  -------------------- -------------------- FOOTER SECTION -------------------- -------------------- -->
+                    <div class="footer-section">
+                        Binance · 2023
+                    </div>
+                <!--  -------------------- -------------------- -------------------- -------------------- -------------------- -->
+            </div>
+
+
+            <!-- -------------------- NAVIGATION SECTION -------------------- -->
+            <div class="tablet-navigation">
+                <div class="container">
+                    <!-- Upper Button -->
+                    <div class="tab-nav-wrap">
+                        <div class="tab-nav-btn" id="tab-up" onclick="tabUp()" style="margin-bottom: 1em;">
+                            <img src="img/home.png" class="img-fluid">
+                        </div>
+                        <div class="tab-nav-btn" onclick="tabDown()" id="tab-down" style="margin-top: 0.5em;">
+                            <img src="img/settings.png" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- -------------------- -------------------- -------------------- -->
+            <!-- -------------------- -------------------- -------------------- -->
+
+            
+                <!-- -------------------- Log-out -------------------- -->
+                <div class="scan-out-main">
+                    <div class="log-out-absolute" onclick="scanout()"></div>
+                    <div class="log-out-wrap">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="log-top">
+                                    <div class="log-img-wrap"><div class="log-img"><img src="img/binance.png" class="img-fluid"></div></div>
+                                    <div  class="log-header-circle"></div>
+                                </div>
+                                <!-- -------------------- Header Bottom -------------------- -->
+                                <div class="log-header-bottom-wrap">
+                                    <div class="log-header-bottom"></div>
+                                    <div class="log-header-bottom"></div>
+                                </div>
+                                <!-- -------------------- -------------------- -------------------- -->
+                                <!-- -------------------- -------------------- -------------------- -->
+                            </div>
+
+                            <div class="col-12">
+                                <div class="log-bottom">
+                                    <div class="log-bottom-txt scan-bottom-txt"></div>
+                                    <div class="log-bottom-option scan-bottom-option">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- -------------------- -------------------- -------------------- -->
+            <!-- -------------------- -------------------- -------------------- -->
+
+            
+            <!-- -------------------- Log-out -------------------- -->
+            <div class="log-out-main">
+                <div class="log-out-absolute" onclick="login()"></div>
+                <div class="log-out-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="log-top">
+                                <div class="log-img-wrap"><div class="log-img"><img src="img/binance.png" class="img-fluid"></div></div>
+                                <div  class="log-header-circle"></div>
+                            </div>
+                            <!-- -------------------- Header Bottom -------------------- -->
+                            <div class="log-header-bottom-wrap">
+                                <div class="log-header-bottom"></div>
+                                <div class="log-header-bottom"></div>
+                            </div>
+                            <!-- -------------------- -------------------- -------------------- -->
+                            <!-- -------------------- -------------------- -------------------- -->
+                        </div>
+
+                        <div class="col-12">
+                            <div class="log-bottom">
+                                <div class="log-bottom-txt">Are you sure you want to log out of Binance CoinTracker</div>
+                                <div class="log-bottom-option">
+                                    <div class="log-yes" onclick="loguserout()">Yes</div>
+                                    <div class="log-no" onclick="login()">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- -------------------- -------------------- -------------------- -->
+        <!-- -------------------- -------------------- -------------------- -->
+        
+    </body>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/structure.js"></script>
+    <script src="js/responsive.js"></script>
+    <script src="js/components/crypto.js"></script>
+
+    <!-- -------------------- FIRST SECTION -------------------- -->
+    <!-- Hamburger page -->
+    <script src="js/components/menu.js"></script>
+    <!-- -------------------- -------------------- -------------------- -->
+    <!-- -------------------- -------------------- -------------------- -->
+
+
+    <!-- -------------------- SECOND SECTION -------------------- -->
+    <!-- Assets Page -->
+    <script src="js/components/assets.js"></script>
+    <!-- Convert Page -->
+    <script src="js/components/convert.js"></script>
+    <!-- Home Page -->
+    <script src="js/components/home.js"></script>
+    <!-- Help Page -->
+    <script src="js/components/help.js"></script>
+    <!-- Message Page -->
+    <script src="js/components/message.js"></script>
+    <!-- Referral Page -->
+    <script src="js/components/referral.js"></script>
+    <!-- Notification Page -->
+    <script src="js/components/notification.js"></script>
+    <!-- Settings Page -->
+    <script src="js/components/settings.js"></script>
+    <!-- Token Page -->
+    <script src="js/components/token.js"></script>
+    <!-- Transaction History Page -->
+    <script src="js/components/transactionhistory.js"></script>
+    <!-- -------------------- -------------------- -------------------- -->
+    <!-- -------------------- -------------------- -------------------- -->
+
+    
+    <!-- -------------------- THIRD SECTION -------------------- -->
+    <!-- About Page -->
+    <script src="js/components/about.js"></script>
+    <!-- Add Token page -->
+    <script src="js/components/addtoken.js"></script>
+    <!-- Bio Authentication page -->
+    <script src="js/components/bioauth.js"></script>
+    <!-- Change Password page -->
+    <script src="js/components/changepassword.js"></script>
+    <!-- Convert Select page -->
+    <script src="js/components/convertselect.js"></script>
+    <!-- Forgot Password page -->
+    <script src="js/components/forgetpassword.js"></script>
+    <!-- Invite page -->
+    <script src="js/components/invite.js"></script>
+    <!-- Language page -->
+    <script src="js/components/language.js"></script>
+    <!-- Market Information page -->
+    <script src="js/components/marketinfo.js"></script>
+    <!-- Passcode page -->
+    <script src="js/components/passcode.js"></script>
+    <!-- Pattern page -->
+    <script src="js/components/pattern.js"></script>
+    <!-- Payment Pin page -->
+    <script src="js/components/paypin.js"></script>
+    <!-- Profile page -->
+    <script src="js/components/profile.js"></script>
+    <!-- Receive page -->
+    <script src="js/components/receive.js"></script>
+    <!-- Ref history page -->
+    <script src="js/components/refhis.js"></script>
+    <!-- Remember Password page -->
+    <script src="js/components/rememberpassword.js"></script>
+    <!-- Rules page -->
+    <script src="js/components/rules.js"></script>
+    <!-- Send Select page -->
+    <script src="js/components/sendselect.js"></script>
+    <!-- Receive Select page -->
+    <script src="js/components/receiveselect.js"></script>
+    <!-- Send page -->
+    <script src="js/components/send.js"></script>
+    <!-- Support page -->
+    <script src="js/components/support.js"></script>
+    <!-- User Information slide page -->
+    <script src="js/components/userinfoslide.js"></script>
+    <!-- Verification page -->
+    <script src="js/components/verification.js"></script>
+    <!-- -------------------- -------------------- -------------------- -->
+    <!-- -------------------- -------------------- -------------------- -->
+    <script src="js/verify.js"></script>
+    <!-- -------------------- -------------------- -------------------- -->
+    <!-- -------------------- -------------------- -------------------- -->
+    <script src="js/jquery.js"></script>
+    <!-- -------------------- -------------------- -------------------- -->
+    <!-- -------------------- -------------------- -------------------- -->
+    <script type="text/javascript">
+        // 
+        function chkInternetStatus() {
+            if(navigator.onLine) {
+                alert("Hurray! You're online!!!");
+            } else {
+                alert("Oops! You're offline. Please check your network connection...");
+            }
+        };
+        // 
+        function copyToken() {
+            let imgTag = ' <img src="img/check-mark.png" style="height:1.25em;width:1.25em;margin-left: 0.125em">'
+            var $copyText = document.getElementById("receive-wallet-address").innerText;
+            var button = document.getElementById("token-copy");
+            navigator.clipboard.writeText($copyText).then(function() {
+                var originalText = button.innerText;
+                button.innerHTML = `Copied ${imgTag}`;
+                setTimeout(function(){
+                    button.innerText = originalText;
+                }, 1500);
+            }, function() {
+                button.style.cssText = "background-color: var(--red);";
+                button.innerText = 'Error';
+            });
+        };
+        // 
+        //  -------------------- -------------------- --------------------
+    </script>
+    <!-- -------------------- -------------------- -------------------- -->
+    <script>
+        function hmepgaddToken(){
+            $("token-page").load(window.location.href + " token-page");
+            $("send-page").load(window.location.href + " send-page");
+            displayGraphIndex();
+            ReceiveChanger();
+        };
+    </script>
+    <!-- -------------------- -------------------- -------------------- -->
+    <!-- -------------------- -------------------- -------------------- -->
+    <script>
+        var fileText = document.getElementById("fileText");
+        var uploadPercentage = document.getElementById("uploadPercentage");
+        var progress = document.getElementById("progress");
+        var userEmail;
+        var fileItem;
+        var fileName;
+        var firebaseimgref;
+        function getFile(e) {
+            fileItem = e.target.files[0];
+            fileName = fileItem.name;
+            firebaseimgref = firebase.storage().ref(`images/${fileName}`);
+        }
+        function getEmail(e) {
+            userEmail = e.target.value;
+        }
+        
+        var firebasefileref = firebase.database().ref('fileName');
+
+        function submidverifyid() {
+            var settingitself = document.getElementsByClassName("verification-lg-txt");
+            for (let i = 0; i < settingitself.length; i++) {
+                settingitself[i].innerHTML = `
+                    <div class="after-ver-wrap">
+                        <div class="after-ver-img"><img src="img/verifiedTick.png" class="img-fluid"></div>
+                        <div class="after-ver-top-txt">Verification Processing...</div>
+                        <div class="after-ver-txt">User account verification Process will only take 5 minutes. And if after 5 minutes your account has not been verified,contact support </div>
+                        <div class="container-fluid" style="margin-top: 5em;">
+                            <div class="row">
+                                <div class="col-5 p-2">
+                                    <div class="after-ver-support one-line" onclick="document.location.href='js/support.html'">Contact Support</div>
+                                </div>
+                                <div class="col-7 p-2">
+                                    <div class="after-ver-support one-line" onclick="verificationPage()">Go back to Validation Page</div>
+                                <div>
+                            </div>
+                        </div
+                    </div>
+                `
+            }
+            uploadImage();
+        }
+
+        function uploadImage() {
+            firebaseimgref.put(fileItem).on("state_changed", (snapshot) => {
+                console.log("successful");
+            })
+            ,(error)=>{
+                console.log("Error is ", error);
+            },()=>{
+                uploadTask.snapshot.ref.getDownloadURL().then((url)=>{
+                    $("verification-page").load(window.location.href + " verification-page");
+                })
+            };
+            
+            firebasefileref.push({
+                Email: userEmail,
+                VerifyID: fileName
+            })
+            ,(error)=>{
+                console.log("Error is ", error);
+            }
+        };
+        function loguserout(){
+            firebase.auth().signOut()
+        }
+
+
+        // 
+        let timer, currSeconds = 0; 
+		function resetTimer() {  
+			/* Clear the previous interval */ 
+			clearInterval(timer);
+			/* Reset the seconds of the timer */ 
+			currSeconds = 0; 
+			/* Set a new interval */ 
+			timer = setInterval(startIdleTimer, 1000); 
+		} 
+		// Define the events that 
+		// would reset the timer 
+		window.onload = resetTimer; 
+		window.onblur = resetTimer; 
+		window.onmousemove = resetTimer;
+		window.onmousedown = resetTimer; 
+		window.ontouchstart = resetTimer;
+		window.onclick = resetTimer; 
+		window.onkeypress = resetTimer;
+		function startIdleTimer() {
+			/* Increment the timer seconds */ 
+			currSeconds++; 
+			logoutuinactivity();
+		}
+		function logoutuinactivity() {
+			if (currSeconds > 900) {
+				loguserout();
+			}
+		}
+        // 
+
+        // 
+        function preloader(){
+			document.getElementById("preloader-background").style.display = "none";
+		}//preloader
+
+		//remove/comment this one to check the website in loading state
+		window.onload = preloader();
+    </script>
+    <!-- -------------------- -------------------- -------------------- -->
+    <!-- -------------------- -------------------- -------------------- -->
+</html>

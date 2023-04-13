@@ -1,0 +1,1035 @@
+/* -------------------- -------------------- GENERAL STYLES -------------------- -------------------- */
+    /* -------------------- STRUCTURE CONTAINER -------------------- */
+        :root{
+            /* light web backgrouned */
+            --light-background: #F8F7FA;
+            /* -------------------- */
+            /* dark web background */
+            --dark-background: #E8E6EB;
+            /* -------------------- */
+        }
+
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            height: 100%;
+            position: relative;
+            width: 100%;
+        }
+        /* Customized container */
+        .custom-row{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        /* -------------------- */
+
+
+
+        /* Nav-link to toggle between main page and settings container */
+        .responsive-navigation-menu{
+            background: var(--light-background);
+            height: 100vh;
+        }
+        .res-nav-wrap{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            width: 100%;
+        }
+        .res-nav-btn{
+            display: flex;
+            border-radius: 0.75em;
+            height: 2.75em;
+            cursor: pointer;
+            padding: 0.5em;
+            width: 2.75em;
+        }
+        #res-up{
+            background: #f3ba2f39;
+        }
+        #res-down{
+            background: transparent;
+        }
+        /*  */
+
+
+
+        /*  */
+        .tablet-navigation{
+            background: var(--dark-background);
+            border-left: 0.125em solid #a7a7a7;
+            overflow: hidden;
+            display: flex;
+            height: 100vh;
+        }
+        .tab-nav-wrap{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+        .tab-nav-btn{
+            display: flex;
+            border-radius: 1em;
+            height: 4em;
+            cursor: pointer;
+            padding: 1em;
+            width: 4em;
+        }
+        #tab-up{
+            background: #f3ba2f39;
+        }
+        #tab-down{
+            background: transparent;
+        }
+        /* -------------------- */
+        
+        
+        
+        
+        /*  */
+        .one-page-parent{
+            height: 100%;
+        }
+        /* -------------------- */
+        
+    /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                
+    /* -------------------- FIRST SECTION -------------------- */
+        /* section */
+        .first-section{
+            display: block;
+            height: 100%;
+            
+        }
+        /* -------------------- */
+        
+        /* spacer container to fit in when first section is fixed */
+        .structure-spacer{
+            display: block;
+            height: 100%;
+        }
+        /* -------------------- */
+    /*  -------------------- -------------------- -------------------- */
+
+
+
+
+    
+    /* -------------------- SECOND SECTION -------------------- */
+        /* section */
+        .second-section{
+            display: block;
+            height: 100%;
+        }
+        /* -------------------- */
+    /*  -------------------- -------------------- -------------------- */
+
+
+
+
+    
+    /* -------------------- THIRD SECTION -------------------- */
+        /* section */
+        .third-section{
+            display: block;
+            height: 100%;
+        }
+        /* -------------------- */
+    /*  -------------------- -------------------- -------------------- */
+
+
+
+
+    
+    /* --------------------  -------------------- */
+        /*  */
+        .page-hide{
+            display: none;
+        }
+        .page-show{
+            display: flex;
+        }
+        /* -------------------- */
+    /*  -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- CONTAINER SECTION PAGE -------------------- -------------------- */
+    /* -------------------- Hamburger Menu Page -------------------- */
+        /* Hambureger menu parent container */
+       
+        /* -------------------- */
+    /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* --------------------  -------------------- */
+        /*  */
+        .general-page{
+            flex-direction: column;
+            height: 100%;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        button{
+            margin: 7.5px;
+        }
+
+        /*  */
+        
+        /* -------------------- */
+    /*  -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- First section IDS -------------------- */
+        /*  */
+        #menu-page{
+            display: flex;
+        }
+        /* ------------ */
+        
+        /*  */
+        #settings-first-page{
+            background: var(--light-background);
+            border-right: 2px solid rgba(0, 0, 0, 0.25);
+        }
+        /* ------------ */
+    /*  -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Second section IDS -------------------- */
+        /*  */
+        #account-page{
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #assets-page{
+            background: var(--dark-background);
+            display: none;
+        }
+        /* ------------ */
+
+        /*  */
+        #convert-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #help-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #home-page{
+            background: var(--dark-background);
+            display: flex;
+        }
+        /* ------------ */
+        
+        /*  */
+        #message-page{
+            background: #a87d08;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #notification-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #referral-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #settings-second-page{
+            background: var(--dark-background);
+        }
+        /* ------------ */
+        
+        /*  */
+        #token-page{
+            background: var(--dark-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #transaction-history-page{
+            background: var(--dark-background);
+            display: none;
+        }
+        /* ------------ */
+    /*  -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Third section IDS -------------------- */
+        /*  */
+        #about-page{
+            background: var(--light-background);
+            padding-bottom: 1.5em;
+            display: none;
+        }
+        /* ------------ */
+
+        /*  */
+        #add-token-page{
+            background: transparent;
+            display: flex;
+        }
+        /* ------------ */
+        
+        /*  */
+        #bioauth-page{
+            background: #1d9918;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */        
+        #change-password-page{
+            background: #2f1799;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #convert-select-page{
+            background: transparent;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #forgot-password-page{
+            background: #034f6d;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #invite-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #language-page{
+            background: var(--dark-background);
+            display: none;
+            z-index: 6;
+        }
+        /* ------------ */
+        
+        /*  */
+        #market-info-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #passcode-page{
+            background: #c26d6d;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #pattern-page{
+            background: #d80331;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #pay-pin-page{
+            background: #15d803;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #profile-page{
+            background: #043863;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #receive-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #refhis-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #remember-password-page{
+            background: #18e229;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #rules-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #select-send-page{
+            background: transparent;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #select-receive-page{
+            background: transparent;
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #send-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #support-page{
+            background: var(--light-background);
+            display: none;
+            height: 100%;
+            width: 100%;
+        }
+        /* ------------ */
+        
+        /*  */
+        #user-info-slide-page{
+            display: none;
+        }
+        /* ------------ */
+        
+        /*  */
+        #verification-page{
+            background: var(--light-background);
+            display: none;
+        }
+        /* ------------ */
+    /*  -------------------- -------------------- -------------------- */
+
+
+
+
+
+    /* -------------------- Overflow control -------------------- */
+        /* Section overflow control */
+            #first-section{
+                overflow: hidden;
+            }
+            #second-section{
+                overflow: hidden;
+            }
+            #third-section{
+                overflow: hidden;
+            }
+            /* Footer controller */
+            .footer-section{
+                overflow: hidden;
+            }
+        /* -------------------- */
+    /*  -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- ---------- MOBILE ---------- -------------------- */
+
+    /* -------------------- ---------- MOBILE ---------- -------------------- */
+
+        /* -------------------- ---------- MOBILE ---------- -------------------- */
+
+            @media screen and (max-width: 768px) {
+                /* -------------------- NAV - LINK PAGE SECTION -------------------- */
+                    /* Nav-link to toggle between main page and settings container */
+                    .responsive-navigation-menu{
+                        width: 0%;
+                    }
+                    /* -------------------- */
+
+                    /* Nav-link to toggle between main page and settings container */
+                    .main-screen-display{
+                        width: 100%;
+                    }
+                    
+                    .tablet-navigation{
+                        width: 0%;
+                    }
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                
+                /* -------------------- FIRST SECTION -------------------- */
+                    /* section */
+                    .first-section-change{
+                        width: 0%;
+                    }
+                    .first-section-changed{
+                        width: 100%;
+                        position: fixed;
+                        z-index: 25;
+                    }
+                    /* -------------------- */
+                    
+                    /* spacer container to fit in when first section is fixed */
+                    .structure-spacer{
+                        width: 0%;
+                    }
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                /* -------------------- SECOND SECTION -------------------- */
+                    /* section */
+                    .second-section-change{
+                        width: 100%;
+                    }
+                    .second-section-changed{
+                        width: 100%;
+                        position: fixed;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                /* -------------------- THIRD SECTION -------------------- */
+                    /* section */
+                    .third-section-change{
+                        width: 0%;
+                    }
+                    .third-section-changed{
+                        width: 100%;
+                        position: fixed;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+    
+                /* -------------------- Footer - Container -------------------- */
+                    /* footer container */
+                    .structure-main-con{
+                        height: 100vh;
+                    }
+                    .footer-section{
+                        height: 0em;
+                    }
+                    /* -------------------- */
+                /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+                /* -------------------- Settings page display -------------------- */
+                    /*  */
+                    .setting-first-show{
+                        display: none;
+                    }
+                    .setting-second-show{
+                        display: flex;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+            }
+
+        /* -------------------- ---------- MOBILE ---------- -------------------- */
+
+    /* -------------------- ---------- MOBILE ---------- -------------------- */
+
+/* -------------------- ---------- MOBILE ---------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- ---------- TABLET ---------- -------------------- */
+
+    /* -------------------- ---------- TABLET ---------- -------------------- */
+
+        /* -------------------- ---------- TABLET ---------- -------------------- */
+
+            @media screen and (min-width: 768px) and (max-width: 992px) {
+                /* -------------------- NAV - LINK PAGE SECTION -------------------- */
+                    /* Nav-link to toggle between main page and settings container */
+                    .responsive-navigation-menu{
+                        width: 0%;
+                    }
+                    /* -------------------- */
+
+                    /* Nav-link to toggle between main page and settings container */
+                    .main-screen-display{
+                        width: 87.5%;
+                    }
+                    
+                    .tablet-navigation{
+                        width: 12.5%;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                
+                /* -------------------- FIRST SECTION -------------------- */
+                    /* section */
+                    .first-section-change{
+                        width: 3.5em;
+                    }
+                    .first-section-changed{
+                        width: 100%;
+                        position: absolute;
+                        z-index: 25;
+                    }
+                    /* -------------------- */
+                    
+                    /* spacer container to fit in when first section is fixed */
+                    .structure-spacer{
+                        width: 15%;
+                    }
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                /* -------------------- SECOND SECTION -------------------- */
+                    /* section */
+                    .second-section-change{
+                        width: 100%;
+                    }
+                    .second-section-changed{
+                        width: 100%;
+                        position: relative;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                /* -------------------- THIRD SECTION -------------------- */
+                    /* section */
+                    .third-section-change{
+                        width: 0%;
+                    }
+                    .third-section-changed{
+                        width: 100%;
+                        position: absolute;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+    
+                /* -------------------- Footer - Container -------------------- */
+                    /* footer container */
+                    .structure-main-con{
+                        height: 100vh;
+                    }
+                    .footer-section{
+                        height: 0em;
+                    }
+                    /* -------------------- */
+                /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+                /* -------------------- Settings page display -------------------- */
+                    /*  */
+                    .setting-first-show{
+                        display: none;
+                    }
+                    .setting-second-show{
+                        display: flex;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+            }
+
+        /* -------------------- ---------- TABLET ---------- -------------------- */
+
+    /* -------------------- ---------- TABLET ---------- -------------------- */
+
+/* -------------------- ---------- TABLET ---------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- ---------- SMALL LAPTOP ---------- -------------------- */
+
+    /* -------------------- ---------- SMALL LAPTOP ---------- -------------------- */
+
+        /* -------------------- ---------- SMALL LAPTOP ---------- -------------------- */
+
+            @media screen and (min-width: 992px) and (max-width: 1200px) {
+                /* -------------------- NAV - LINK PAGE SECTION -------------------- */
+                    /* Nav-link to toggle between main page and settings container */
+                    .responsive-navigation-menu{
+                        width: 6%;
+                    }
+                    /* -------------------- */
+
+                    /* Nav-link to toggle between main page and settings container */
+                    .main-screen-display{
+                        width: 94%;
+                    }
+                    
+                    .tablet-navigation{
+                        width: 0%;
+                    }
+
+
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                
+                /* -------------------- FIRST SECTION -------------------- */
+                    /* section */
+                    .first-section-change{
+                        width: 35%;
+                    }
+                    .first-section-changed{
+                        width: 35%;
+                        position: relative;
+                    }
+                    /* -------------------- */
+                    
+                    /* spacer container to fit in when first section is fixed */
+                    .structure-spacer{
+                        width: 0%;
+                    }
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                /* -------------------- SECOND SECTION -------------------- */
+                    /* section */
+                    .second-section-change{
+                        width: 100%;
+                    }
+                    .second-section-changed{
+                        width: 100%;
+                        position: relative;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                /* -------------------- THIRD SECTION -------------------- */
+                    /* section */
+                    .third-section-change{
+                        width: 0%;
+                    }
+                    .third-section-changed{
+                        width: 100%;
+                        position: absolute;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+    
+                /* -------------------- Footer - Container -------------------- */
+                    /* footer container */
+                    .structure-main-con{
+                        height: 100vh;
+                    }
+                    .footer-section{
+                        height: 0em;
+                    }
+                    /* -------------------- */
+                /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+                /* -------------------- Settings page display -------------------- */
+                    /*  */
+                    .setting-first-show{
+                        display: flex;
+                    }
+                    .setting-second-show{
+                        display: none;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+    
+                /* -------------------- Footer - Container -------------------- */
+                    /* footer container */
+                    .structure-main-con{
+                        height: calc(100vh - 2.05em);
+                    }
+                    .footer-section{
+                        align-items: center;
+                        background: var(--dark-background);
+                        display: flex;
+                        font-weight: 600;
+                        font-size: 0.85em;
+                        height: 2.05em;
+                        justify-content: center;
+                        width: 100%;
+                    }
+                    /* -------------------- */
+
+
+
+                    /* Nav-link to toggle between main page and settings container */
+                    .responsive-navigation-menu{
+                        background: var(--dark-background);
+                    }
+                /* -------------------- -------------------- -------------------- */
+            }
+
+        /* -------------------- ---------- SMALL LAPTOP ---------- -------------------- */
+
+    /* -------------------- ---------- SMALL LAPTOP ---------- -------------------- */
+
+/* -------------------- ---------- SMALL LAPTOP ---------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- ---------- LAPTOP ---------- -------------------- */
+
+    /* -------------------- ---------- LAPTOP ---------- -------------------- */
+
+        /* -------------------- ---------- LAPTOP ---------- -------------------- */
+
+            @media screen and (min-width: 1200px) {
+                /* -------------------- NAV - LINK PAGE SECTION -------------------- */
+                    /* Nav-link to toggle between main page and settings container */
+                    .responsive-navigation-menu{
+                        width: 4%;
+                    }
+                    /* -------------------- */
+
+                    /* Nav-link to toggle between main page and settings container */
+                    .main-screen-display{
+                        width: 96%;
+                    }
+                    
+                    .tablet-navigation{
+                        width: 0%;
+                    }
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                
+                /* -------------------- FIRST SECTION -------------------- */
+                    /* section */
+                    .first-section-change{
+                        width: 27.5%;
+                    }
+                    .first-section-changed{
+                        width: 27.5%;
+                        position: relative;
+                    }
+                    /* -------------------- */
+                    
+                    /* spacer container to fit in when first section is fixed */
+                    .structure-spacer{
+                        width: 0%;
+                    }
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                /* -------------------- SECOND SECTION -------------------- */
+                    /* section */
+                    .second-section-change{
+                        width: 57.5%;
+                    }
+                    .second-section-changed{
+                        width: 57.5%;
+                        position: relative;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+                
+                /* -------------------- THIRD SECTION -------------------- */
+                    /* section */
+                    .third-section-change{
+                        width: 42.5%;
+                    }
+                    .third-section-changed{
+                        width: 42.5%;
+                        position: relative;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+
+
+
+
+    
+                /* -------------------- Footer - Container -------------------- */
+                    /* footer container */
+                    .structure-main-con{
+                        height: calc(100vh - 2.05em);
+                    }
+                    .footer-section{
+                        align-items: center;
+                        background: var(--light-background);
+                        display: flex;
+                        font-weight: 600;
+                        font-size: 0.85em;
+                        height: 2.05em;
+                        justify-content: center;
+                        width: 100%;
+                    }
+                    /* -------------------- */
+                /* -------------------- -------------------- -------------------- */
+
+
+
+
+
+                /* -------------------- Settings page display -------------------- */
+                    /*  */
+                    .setting-first-show{
+                        display: flex;
+                    }
+                    .setting-second-show{
+                        display: none;
+                    }
+                    /* -------------------- */
+                /*  -------------------- -------------------- -------------------- */
+            }
+
+        /* -------------------- ---------- LAPTOP ---------- -------------------- */
+
+    /* -------------------- ---------- LAPTOP ---------- -------------------- */
+
+/* -------------------- ---------- LAPTOP ---------- -------------------- */

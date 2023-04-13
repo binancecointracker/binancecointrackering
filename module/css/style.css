@@ -1,0 +1,3975 @@
+/* -------------------- -------------------- Root -------------------- -------------------- */
+:root{
+    /* -------------------- Primary colours -------------------- */
+        /* Binance main shade of yellow */
+        --yellow-background: #F3BA2F;
+        /* -------------------- */
+        /* light web backgrouned */
+        --light-background: #F8F7FA;
+        /* -------------------- */
+        /* dark web background */
+        --dark-background: #E8E6EB;
+        /* -------------------- */
+        /* White font color */
+        --white-font: #fafafa;
+        /* -------------------- */
+        /* Upper layer for setting header yellow */
+        --setting-yellow: #FFE77B;
+        /* -------------------- */
+        /* Black background */
+        --black-background: #0C0E12;
+        /* -------------------- */
+        /* Black background */
+        --light-font: #6f7781;
+        /* -------------------- */
+    /* -------------------- -------------------- -------------------- */
+
+
+
+    /* -------------------- Secondary colours -------------------- */
+        /* light coloured - Seperation line */
+        --light-seperation-line: #b4b4b4;
+        /* toggle line */
+        --toggle-line: #a1a1a1;
+        /* -------------------- */
+        /* Telegram button */
+        --telegram-btn: #F3BA2F;
+        /* -------------------- */
+        /* Overlay colour */
+        --overlay-colour: rgba(0, 0, 0, 0.65);
+        /* -------------------- */
+        /* Overlay colour */
+        --yellow-overlay: #f3ba2f39;
+        /* -------------------- */
+    /* -------------------- -------------------- -------------------- */
+
+
+
+    /* -------------------- Font Sizes -------------------- */
+        /* 1.3em */
+        --fontsize-1-3: 1.3em;
+        /* -------------------- */
+        /* 1em */
+        --fontsize-1: 1em;
+        /* -------------------- */
+        /* 0.9em */
+        --fontsize-0-9: 0.9em;
+        /* -------------------- */
+        /* 0.85em */
+        --fontsize-0-85: 0.85em;
+        /* -------------------- */
+        /* 0.8em */
+        --fontsize-0-8: 0.8em;
+        /* -------------------- */
+        /* 0.75em */
+        --fontsize-0-75: 0.75em;
+        /* -------------------- */
+        /* 0.7em */
+        --fontsize-0-7: 0.7em;
+        /* -------------------- */
+    /* -------------------- -------------------- -------------------- */
+
+
+
+    /* -------------------- Border -------------------- */
+        /* 1em */
+        --border-1: 1em;
+        /* -------------------- */
+        /* 0.75em */
+        --border-0-75: 0.75em;
+        /* -------------------- */
+        /* 0.5em */
+        --border-0-5: 0.5em;
+        /* -------------------- */
+        /* 0.25em */
+        --border-0-25: 0.25em;
+        /* -------------------- */
+    /* -------------------- -------------------- -------------------- */
+
+
+
+    /* -------------------- Font weight -------------------- */
+        /* Largest */
+        --largest-font: 700;
+        /* -------------------- */
+        /* Large */
+        --large-font: 600;
+        /* -------------------- */
+        /*  */
+        --small-font: 500;
+        /* -------------------- */
+        /*  */
+        --smallest-font: 400;
+        /* -------------------- */
+    /* -------------------- -------------------- -------------------- */
+
+
+
+    /* -------------------- other -------------------- */
+        /* Box shadow */
+        --display-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 7px 0 rgba(0, 0, 0, 0.08);
+        /* -------------------- */
+    /* -------------------- -------------------- -------------------- */
+}
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- Style css file for app bar root styles -------------------- -------------------- */
+    
+    /* Font family */
+    @font-face {
+        font-family: font-fam;
+        src: url(../img/din-regular.ttf);
+    }
+
+    /* -------------------- */
+    
+
+
+    /* GENERAL STYLES */
+    *{
+        box-sizing: border-box;
+        font-family: font-fam;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+    }
+    body{
+        font-family: font-fam;
+        touch-action: pan-y;
+        user-select: none;
+    }
+    .parent-container{
+        height: 100%;
+        position: fixed;
+        width: 100%;
+    }
+    body::selection{
+        background: none;
+    }
+    /* Line height variation */
+    .line-height{
+        line-height: normal;
+    }
+    .line-height-zero{
+        line-height: 0px;
+    }
+    /* -------------------- */
+    
+
+
+    /* Main page display for components */
+    .page-display{
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        height: 100%;
+        width: 100%;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    /* width */
+    ::-webkit-scrollbar {
+        width: 0.35em;
+        margin: 2em 0;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px var(--light-seperation-line); 
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #adadad; 
+        border-radius: 0.5em;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #8a8a8a; 
+    }
+    /* -------------------- */
+
+
+
+    /* Nav-link to toggle between main page and settings container */
+    .main-screen-display{
+        background: var(--dark-background);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    /* -------------------- */
+    
+
+
+    /* One line for texts */
+    .one-line {
+        --max-lines: 1;	
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: var(--max-lines);
+    }
+    /* -------------------- */
+    
+
+
+    /* DArk background */
+    .dark-color{
+        background: var(--black-background);
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .yellow-color{
+        background: var(--yellow-background);
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .red {
+        color: rgb(166, 50, 50);
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    #preloader-background {
+        background: #0C0E12;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #circle-loader {
+        width: 90px;
+        height: 90px;
+        border-style: solid;
+        border-width: 0.35em;
+        border-top-color: #FFE77B;
+        border-right-color: #FFE77B;
+        border-bottom-color: #fcf6df;
+        border-left-color: #fcf6df;
+        border-radius: 50%;
+        -webkit-animation: spinLoader 2s linear infinite;
+        animation: spinLoader 2s linear infinite;
+    }
+    .preload{
+        height: auto;
+        position: absolute;
+        width: fit-content;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom:0;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    @-webkit-keyframes spinLoader {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes spinLoader {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    #centre-logo {
+        position: fixed;
+        width: 70px;
+        height: 70px;
+        padding-bottom: 10px;  
+    }
+    .animatePageIn {
+        position: relative;
+        -webkit-animation-name: animatePageIn;
+        -webkit-animation-duration: 3s;
+        animation-name: animatePageIn;
+        animation-duration: 3s;
+    }
+    @-webkit-keyframes animatePageIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes animatePageIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    #content{
+        height: 100vh;
+        width: 100vw;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- -------------------- [FIRST SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [FIRST SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [FIRST SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [FIRST SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [FIRST SECTION - PAGE] -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [MENU - PAGE] -------------------- -------------------- */
+    /* Remove container button */
+    .menu-remove-btn{
+        background: var(--overlay-colour);
+        display: flex;
+        height: 100%;
+        position: absolute;
+    }
+
+    /* Menu header container */
+    .menu-parent-container {
+        background: var(--light-background);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding-bottom: 3.5em;
+        overflow-x: hidden;
+        position:relative;
+    }
+    .menu-header-wrapper {
+        width: 100%;
+        height: auto;
+        padding: 1.1em 0 0.7em 0;
+    }
+    .menu-header-container {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    .menu-header-img {
+        display: flex;
+        height: 2.2em;
+        width: 2.2em;
+    }
+    .menu-header-txt {
+        color: var(--yellow-background);
+        font-size: var(--fontsize-1-3);
+        font-weight: var(--large-font);
+        padding-left: 0.5em;
+    }
+    /* -------------------- */
+    
+
+
+    /* Menu seperation line */
+    .menu-seperation-line {
+        border-top: 0.05em solid var(--light-seperation-line);
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin-top: 1em;
+        padding-top: 1em;
+        width: 100%;
+    }
+    /* -------------------- */
+    
+
+
+    /* Menu label text style */
+    .menu-label-txt {
+        font-size: var(--fontsize-0-75);
+        font-weight: 500;
+        padding-top: 0.8em;
+    }
+    /* -------------------- */
+    
+
+
+    /* Menu main page anchor buttons */
+    .menu-option-wrapper {
+        border-radius: 0 2000em 2000em 0;
+        height: auto;
+        padding: 0.75em 0;
+        margin: 0.125em 0;
+        cursor: pointer;
+        width: 97.5%;
+    }
+    .menu-option-wrapper:hover {
+        background: var(--menu-hover);
+    }
+    .menu-option-container {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .menu-option-left-container {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    /* User container */
+    .menu-user-con {
+        border-top: 0.05em solid var(--light-seperation-line);
+        border-bottom: 0.05em solid var(--light-seperation-line);
+        padding: 0.5em 0;
+        margin-bottom: 0.5em;
+    }
+
+    /* left side image */
+    .menu-option-img {
+        display: flex;
+        height: 1.5em;
+        width: 1.5em;
+    }
+    .menu-option-txt {
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        padding-left: 1.5em;
+
+        --max-lines: 1;	
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: var(--max-lines);
+    }
+    .menu-red-txt{
+        color: rgb(166, 50, 50);
+    }
+    
+    /* Right side image*/
+    .menu-option-right-img {
+        display: flex;
+        height: 1.5em;
+        width: 1.5em;
+    }
+    /* -------------------- */
+    
+
+
+    /* Butttom button leading to telegram chat page */
+    .menu-telegram-btn{
+        align-items: center;
+        background: var(--telegram-btn);
+        border-radius: var(--border-0-5);
+        box-shadow: var(--display-box-shadow);
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: center;
+        margin: auto;
+        margin-top: 1em;
+        padding: 0.75em 1em;
+        width: fit-content;
+    }
+    .menu-telegram-txt{
+        font-size: var(--fontsize-0-8);
+        font-weight: var(--small-font);
+        padding-right: 0.75em;
+        
+        --max-lines: 1;	
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: var(--max-lines);
+    }
+    .menu-telegram-img{
+        border: 0.1em solid transparent;
+        border-radius: var(--border-0-25);
+        display: flex;
+        height: 1.25em;
+        width: 1.25em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- -------------------- [SECOND SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [SECOND SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [SECOND SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [SECOND SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [SECOND SECTION - PAGE] -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [ASSETS - PAGE] -------------------- -------------------- */
+    /*  */
+    .assets-page-display{
+        padding-bottom: 1.50em;
+    }
+    .assets-header {
+        background: var(--setting-yellow);
+        height: auto;
+    }
+    .assets-header-link-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5em 0 0.1em 0;
+        z-index: 0;
+    }
+    #language-index{
+        z-index: 1;
+    }
+    #trans-1 {
+        background: var(--dark-background);
+    }
+    #trans-2 {
+        background: transparent;
+    }
+    /* -------------------- */
+    
+
+
+    /* Assets username */
+    .assets-username-wrap {
+        height: auto;
+        padding: 2em 0;
+        width: fit-content;
+        z-index: 0;
+    }
+    .assets-username-txt {
+        font-size: 1.2em;
+        font-weight: var(--large-font);
+    }
+    .assets-unverified-btn {
+        align-items: center;
+        background: var(--red-overlay);
+        border-radius: 3em;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        width: fit-content;
+        padding: 0.2em 0.85em 0.2em 0.85em;
+        margin: auto;
+    }
+    .verify-img {
+        display: flex;
+        height: 0.85em;
+        margin-left: 0.25em;
+        width: 0.85em;
+    }
+    .verify-txt {
+        font-size: var(--fontsize-0-75);
+        font-weight: var(--large-font);
+    }
+    /* Assets image */
+    .assets-img {
+        height: 7.5em;
+        margin-top: -1.5em;
+        position:absolute;
+        right: 10%;
+        width: 7.5em;
+    }
+    .assets-header-circle {
+        background: var(--light-background);
+        border-radius: 500px 500px 0px 0px;
+        bottom: -0.35em;
+        height: 0.75em;
+        left:0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        width: 0.825em;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .asset-header-bottom-wrap {
+        background: var(--light-background);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .asset-header-bottom {
+        background: var(--setting-yellow);
+        border-radius: 0 0 13em 13em;
+        height: 1em;
+        width: calc(50% - 0.4em);
+    }
+    /* -------------------- */
+    
+    
+    
+    /* Total Assets first text */
+    .assets-txt-main{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding: 0.75em 0 0 0;
+    }
+    /* Assets Card container */
+    .assets-card-wrap {
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin: auto;
+        width: 100%;
+    }
+    .assets-card-background {
+        background: var(--light-background);
+        border-radius: 0.5em;
+        display: flex;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 96.025%;
+    }
+    .assets-card-first-pad{
+        padding-top: 1em;
+    }
+    .assets-card-second-pad{
+        padding-bottom: 0.75em;
+    }
+    /* Asset Card First row container*/
+    .assets-card-first-row {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .assets-card-first-left {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    .assets-card-user-txt {
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding-left: 0.5em;
+    }
+    .assets-card-binance-logo{
+        display: flex;
+        height: 1.8em;
+        width: 1.8em;
+    }
+    .assets-card-first-img {
+        display: flex;
+        height: 1.65em;
+        width: 1.65em;
+    }
+    .assets-card-value {
+        font-size: 1.75em;
+        font-weight: 700;
+        line-height: normal;
+        padding: 0.15em 0 0.1em 0;
+    }
+    .assets-card-value-txt {
+        color: var(--light-font);
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        line-height: normal;
+        padding-bottom: 0.25em;
+    }
+    #assets-date {
+        color: var(--light-font);
+        font-size: var(--fontsize-0-75);
+        font-weight: var(--large-font);
+    }
+    /* Assets card second container*/
+    .assets-card-second-row {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .assets-card-line{
+        background: var(--dark-background);
+        display: flex;
+        height: 2px;
+        margin: auto;
+        margin-top: 1em;
+        margin-bottom: 0.25em;
+        width: 96%;
+    }
+    .assets-card-btn {
+        align-items: center;
+        cursor: pointer;
+        border-radius: 0.5em;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+    }
+    #assets-card-btn-1 {
+        background: var(--red-overlay);
+    }
+    #assets-card-btn-2 {
+        background: var(--yellow-background);
+    }
+    .assets-card-btn-txt {
+        font-size: var(--fontsize-0-75);
+        font-weight: var(--large-font);
+        padding: 1em 3px;
+    }
+    .assets-card-btn-img {
+        display: flex;
+        height: 1.8em;
+        justify-content: center;
+        width: 1.8em;
+    }
+    /* -------------------- */
+    
+    
+    
+    /* Assets Information container*/
+    .asset-info-wrap {
+        background: var(--yellow-overlay);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin: 1.25em 0;
+        padding: 0.5em 0 1em 0;
+        width: 100%;
+    }
+    .assets-info{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width:100%;
+    }
+    .assets-info-txt {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--small-font);
+        margin-top: 0.65em;
+    }
+    .assets-info-txt:nth-of-type(1) .assets-info-txt:nth-of-type(2) {
+        margin-top: 0px;
+    }
+    /* -------------------- */
+
+
+    
+    /* Seperation line */
+    .assets-user-seperation-line {
+        background: var(--dark-background);
+        display: flex;
+        height: 2px;
+        margin: 0.75em 0 0.25em 0;
+        width: 100%;
+    }
+    .assets-btn-border{
+        border: 2px solid var(--black-background);
+    }
+    /* -------------------- */
+    
+    
+    
+    /* Assets  */
+    .assets-support-full-wrap{
+        background: var(--dark-background);
+        cursor: pointer;
+        display: flex;
+        height: auto;
+        padding: 1em 0;
+        width: 100%;
+    }
+    .assets-support-btn-wrap{
+        background: var(--light-background);
+        border-radius: 0.5em;
+        cursor: pointer;
+        display: flex;
+        height: auto;
+        padding: 0.75em 0;
+        width: 100%;
+    }
+    .assets-support-btn {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+        width:  100%;
+    }
+    .assets-support-left-wrap{
+        align-items:center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        width: fit-content;
+    }
+    .assets-support-img-wrap{
+        background: var(--dark-background);
+        border-radius: 50%;
+        display: flex;
+        height: auto;
+        padding: 0.5em;
+        width: fit-content;
+    }
+    .assets-support-img-left {
+        display: flex;
+        height: 1.5em;
+        width: 1.5em;
+    }
+    .assets-support-img-right {
+        display: flex;
+        height: 1.8em;
+        width: 1.8em;
+    }
+    .assets-support-txt{
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        padding-left: 1em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [CONVERT - PAGE] -------------------- -------------------- */
+    /*  */
+    .convert-page-display{
+        height: 100%;
+        width: 100%;
+    }
+    .convert-parent{
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .convert-header-txt{
+        font-size: 1.5em;
+        font-weight: var(--large-font);
+    }
+    .convert-nav-txt{
+        font-size: 1.5em;
+        font-weight: var(--large-font);
+        padding-left: 0.5em;
+    }
+    /* -------------------- */
+
+    
+    
+    /* Convert form*/
+    .convert-form {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+    
+    /* Form container starts here */
+    .convert-from-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+        margin-top: 0.5em;
+        width: 100%;
+    }
+    .convert-from-txt{
+        color: var(--light-font);
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+    }
+    /* -------------------- */
+
+    
+    
+    /* Input container stylesheet*/
+    .convert-input-con{
+        align-items: center;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 0.25em;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        padding: 1em 0;
+        margin-top: 0.25em;
+        width: 100%;
+    }
+    .convert-input-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow: hidden;
+        padding-right: 0.01em;
+        height: auto;
+        width: 100%;
+    }
+    /* Right container for input*/
+    .convert-right-wrap{
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        border-right: 2px solid var(--light-seperation-line);
+        flex-direction: row;
+        margin-right: 0.75em;
+        padding-right: 0.75em;
+        height: auto;
+        width: fit-content;
+    }
+    .convert-img{
+        background: rgba(0, 0, 0, 0.1);
+        display: flex;
+        border-radius: 50%;
+        height: 1.25em;
+        margin-right: 0.25em;
+        width: 1.25em;
+    }
+    .convert-selectbtn{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+    }
+    .convert-selectimg{
+        display: flex;
+        height: 0.5em;
+        margin-left: 0.5em;
+        width: 0.5em;
+    }
+    /* -------------------- */
+
+
+
+    /* Middle Input container*/
+    .convert-input{
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        padding-right: 1.5em;
+        width: 100%;
+    }
+    /* Right container*/
+    .convert-max-txt{
+        color: var(--yellow-background);
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 500;
+    }
+    /* -------------------- */
+
+
+    
+    /* Available balance container */
+    .convert-available-txt{
+        color: var(--light-font);
+        font-size: var(--fontsize-0-75);
+        font-weight: var(--large-font);
+        padding: 0.5em;
+    }
+    /* Percentage buttons */
+    .convert-percent-btn{
+        align-items: center;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 0.5em;
+        box-shadow: var(--display-box-shadow);
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        font-size: var(--fontsize-0-7);
+        font-weight: var(--large-font);
+        height: auto;
+        padding: 0.5em 0;
+        justify-content: center;
+        width: 100%;
+    }
+    /* -------------------- */
+
+
+    
+    /* Switch button*/
+    .convert-switch-btn{
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-top: 1em;
+        margin-bottom: 0.75em;
+        height: 2.5em;
+        width: 2.5em;
+    }
+    .convert-form-bottom{
+        display: flex;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        justify-content: end;
+        margin-top: 0.5em;
+    }
+    /* -------------------- */
+
+    
+    
+    /* Buttons stylesheet */
+    .convert-num{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+        height: auto;
+        width: 100%;
+    }
+    .convert-num-btn{
+        border-radius: 0.25em;
+        align-items: center;
+        border-radius: 0.25em;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        font-size: 1.5em;
+        font-weight: var(--large-font);
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    .convert-num-btn:hover {
+        background: var(--dark-background);
+    }
+    .convert-num-img {
+        display: flex;
+        height: 1em;
+        margin: auto;
+        width: 1em;
+    }
+    /* -------------------- */
+
+
+    
+    /* Bottom Button*/
+    .convert-convert-btn {
+        align-items: center;
+        background: var(--yellow-background);
+        border-radius: 0.5em;
+        cursor: pointer;
+        display: flex;
+        font-size: 1em;
+        font-weight: 600;
+        justify-content: center;
+        margin-top: 0.5em;
+        padding: 0.75em 0;
+    }
+    .convert-margin-bottom{
+        position: relative;
+        height: 1em;
+        width: 100%;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [HELP - PAGE] -------------------- -------------------- */
+    /*  */
+    .help-parent-container{
+        margin-bottom: 1em;
+    }
+    .help-header-wrap {
+        display: flex;
+        height: auto;
+        width: 100%;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .help-header-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.15em 0 0.75em 0;
+    }
+    .help-left-container {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    .help-header-img {
+        cursor: pointer;
+        height: 1.8em;
+        width: 1.8em;
+    }
+    .help-header-txt {
+        color: var(--white-font);
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding-left: 1em;
+    }
+    /* -------------------- */
+
+
+
+    /* Help header large text */
+    .help-faq-txt {
+        font-size: 1.05em;
+        font-weight: var(--large-font);
+    }
+    /* -------------------- */
+
+
+
+    /**/
+    .panel {
+        position: relative;
+        height: 48px;
+        margin: 10px;
+        cursor: pointer;
+        transition: flex 0.5s linear;
+        overflow: hidden;
+    }
+    .panel.active {
+        flex-grow: 5;
+    }
+    .setting-title {
+        display: flex;
+        margin: 12px 20px;
+    }
+    .setting-title h3 {
+        margin: 0 10px;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+    }
+    .setting-content {
+        opacity: 0;
+        margin: 16px 20px;
+        line-height: 28px;
+        transition: opacity 0.2s ease-in;
+    }
+    .panel.active .setting-content {
+        opacity: 1;
+        transition: opacity 0.2s ease-in 0.3s;
+    }
+    /* -------------------- */
+
+
+
+    .course-accordion {
+        background: var(--light-background);
+        cursor: pointer;
+        padding: 8px 0;
+        width: 100%;
+    }
+    .accordion-parent {
+        background: var(--yellow-overlay);
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+    .course-accordion.active, .course-accordion:hover{
+        border-radius: 0 0 1em 1em;
+    }
+    .accordion-header-wrap {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .accordion-left-container {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    .accordion-image-container {
+        background: var(--yellow-overlay);
+        border-radius: 50%;
+        display: flex;
+        height: 2em;
+        padding: 0.5em;
+        width: 2em;
+    }
+    .accordion-image-left{
+        transform: rotate(180deg);
+        border-radius: 50%;
+        display: flex;
+        height: 2em;
+        padding: 0.4em;
+        width: 2em;
+    }
+    .course-accordion:hover .accordion-image-left {
+        transform: rotate(270deg);
+    }
+    .accordion-header-txt {
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        padding-left: 1em;
+    }
+    .help-accord-back{
+        background: var(--dark-background);
+        height: auto;
+        width: 100%;
+    }
+    .help-accord-con{
+        background: var(--dark-background);
+        height: auto;
+        margin-bottom: 1em;
+        border-radius: var(--border-1);
+        overflow: hidden;
+        width: 100%;
+    }
+    /* -------------------- */
+
+
+
+    /* Panel container */
+    .course-panel {
+        background-color: transparent;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.45s ease-out;
+        width: 100%;
+    }
+    .panel-large-txt {
+        font-size: var(--fontsize-1-3);
+        font-weight: var(--large-font);
+        line-height: normal;
+        padding-top: 0.5em;
+    }
+    .accordion-ol {
+        counter-reset: item;
+        padding-left: 1em;  
+    }
+    .accordion-li {
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        margin: 1em 0;
+    }
+    .accordion-line {
+        background: var(--light-seperation-line);
+        display: flex;
+        height: 2px;
+        margin-top: 2em;
+        width: 100%;
+    }
+    /* -------------------- */
+
+
+
+    /* Accordion Telegram button*/
+    .accordion-question {
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+        text-align: center;
+        padding: 1em 0 0.75em 0;
+    }
+    .accordion-btn {
+        align-items: center;
+        background: var(--telegram-btn);
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        margin-bottom: 2.25em;
+        max-width: fit-content;
+        padding: 0.65em 1.5em;
+    }
+    .accordion-btn-txt {
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+    }
+    .accordion-btn-img {
+        border-radius: 0.35em;
+        display: flex;
+        height: 1.5em;
+        margin-left: 1em;
+        width: 1.5em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [HOME - PAGE] -------------------- -------------------- */
+    .cursor{
+        cursor: pointer;
+    }
+
+
+    /* Home head container */
+    .home-page-display{
+        background: var(--light-background);
+        width: 100%;
+        height: 100vh;
+    }
+    .hmepg-head-container  {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        padding: 0.9em 0.1em 0.2em 0.1em;
+        width: auto;
+    }
+    /* -------------------- */
+
+
+    /* Left container */
+    .hmepg-left-head-container {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        max-width: 58%;
+        overflow: hidden;
+    }
+    /* User Icon */
+    .hmepg-user-icon-wrap {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        width:  auto;
+    }
+    .hmepg-user-icon{
+        border-radius: 50%;
+        display: flex;
+        height: 1.65em;
+        width: 1.65em;
+    }
+    /* -------------------- */
+
+
+
+    /* Username and promo stylesheet */
+    .hmepg-username-promo-wrap{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin-left: 0.65em;
+        width: 100%;
+    }
+    /* Username Stylesheet */
+    .hmepg-username-txt{
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+        padding-left: 0.125em;
+    }
+    /* Promo Style sheet */
+    .hmepg-promo-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        padding-top: 0.125em;
+    }
+    .hmepg-promo-img{
+        display: flex;
+        height: 0.8em;
+        width: 0.8em;
+    }
+    .hmepg-promo-txt{
+        font-size: 0.54em;
+        font-weight: var(--small-font);
+        padding-left: 0.4em;
+    }
+    /* -------------------- */
+    
+
+
+    /* Right container */
+    .hmepg-right-head-container {
+        align-items: end;
+        cursor: pointer;
+        display: flex;
+        max-width: 38%;
+        position: relative;
+    }
+    .hmepg-nav-link{
+        border-radius: 50%;
+        display: flex;
+        height: 1.75em;
+        width: 1.75em;
+    }
+    .hmepg-nav-link:hover{
+        background: var(--dark-background);
+    }
+    .hmepg-nav-link-sub{
+        border-radius: 50%;
+        display: flex;
+    }
+    .hmepg-nav-link:nth-child(2n) {
+        margin: 0px 1.25em;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    /* Card Container */
+    .hmepg-card-wrap {
+        padding: 0.55em 0em 1.5em 0em;
+    }
+    .hmepg-card-container{
+        background: var(--black-background);
+        border-radius: 0.5em;
+        overflow: hidden;
+        padding: 1em 1.2em 1.5em 1.2em;
+    }
+    /* -------------------- */
+
+
+
+    /* Cards first comtainer */
+    .card-top-container {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .card-top-span{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+    }
+    /* -------------------- */
+
+
+
+    /* Logo Image for card*/
+    .card-logo-img {
+        display: flex;
+        height: 1.5em;
+        width: 1.5em;
+    }
+    .card-txt {
+        color: var(--white-font);
+        font-size: var(--border-0-75);
+        font-weight: var(--large-font);
+        padding-left: 1em;
+    }
+    .eye-icon {
+        cursor: pointer;
+        display: flex;
+        width: 1.5em;
+        height: 1.5em;
+        margin-left: 0.5em;
+    }
+    #div-eye-cover{
+        background: var(--light-background);
+        border-radius: 200px;
+        display: none;
+        position: absolute;
+        transform: rotate(45deg);
+        right: 50%;
+        margin-top: -10%;
+        left: 50%;
+        width: 2px;
+        height: 120%;
+    }
+    /* -------------------- */
+
+
+
+    /* Cards Second Container */
+    .card-amount {
+        font-size: 1.8em;
+        font-weight: 800;
+        color: var(--white-font);
+        padding-top: 0.5em;
+        text-align: center;
+    }
+    /* -------------------- */
+
+
+
+    /* Cards third container */
+    .card-bottom-wrap {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: center;
+        margin-top: 1em;
+        width: 100%;
+    }
+    .card-bottom-container {
+        display: flex;
+        flex-direction:row;
+    }
+    /* -------------------- */
+
+
+
+    /* Card Button stylesheet*/
+    .card-btns {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 0.1em 0.1em 0 0.1em;
+        position: relative;
+        text-align: center;
+    }
+    .card-btn-img-wrap {
+        background: var(--yellow-overlay);
+        border-radius: 0.25em;
+        padding: 0.3em 0.475em;
+    }
+    .card-btn-img {
+        display: flex;
+        height: 1.6em;
+        width: 1.6em;
+    }
+    .card-btn-label{
+        color: var(--dark-background);
+        font-size: 0.825em;
+        font-weight: var(--large-font);
+        padding-top: 1em;
+    }
+    .card-btns:nth-child(2n) {
+        margin: 0px 2.5em;
+    }
+    /* -------------------- */
+    
+
+
+    /* Card Container */
+    .hmepg-token-wrap {
+        background: var(--dark-background);
+        border-radius: 0.5em 0.5em 0px 0px;
+        flex: 1;
+        height: auto;
+        margin-top: 1.5em;
+        padding-top: 1.4em;
+        padding-bottom: 2.5em;
+        width: 100%;
+    }
+    .hmepg-token-acc-txt{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+    }
+    /* -------------------- */
+
+
+    /* Token main container */
+    .token-main-wrap {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        width: 100%;
+    }
+    /* Token Image container */
+    .hmepg-token-img-wrap{
+        display: flex;
+        height: auto;
+        margin: 0 0.75em 0 0.075em;
+        width: 2.65em;
+    }
+    /* -------------------- */
+
+
+
+    /* Token container */
+    .hmepg-sub-token-left-wrap{
+        width: calc(100% - 3.55em);
+    }
+    .hmepg-main-token-con {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        overflow-x: hidden;
+        left:0;
+        width: 100%;
+    }
+    .hmepg-main-token-con-pad{
+        padding: 0.75em 0px;
+    }
+    .hmepg-sub-token-left-con {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+    .hmepg-token-name{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding-left: 0.1em;
+    }
+    .hmepg-token-price{
+        font-size: 0.65em;
+        font-weight: var(--large-font);
+        padding-left: 0.1em;
+    }
+    .hmepg-token-percent {
+        font-size: 0.65em;
+        font-weight: var(--large-font);
+        padding-left: 0.75em;
+    }
+    /* -------------------- */
+
+
+    /* Token balance*/
+    .hmepg-sub-token-right-con{
+        font-size: 1.25em;
+        font-weight: var(--large-font);
+    }
+    /* Token bottom line*/
+    .hmepg-sub-token-line{
+        background: var(--light-seperation-line);
+        display: flex;
+        height: 0.05em;
+        position: absolute;
+        width: 200%;
+    }
+    /* -------------------- */
+
+
+    
+    /* If no tgoken is added container container */
+    .hmepg-display-background{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        margin: auto;
+        margin-top: 5em;
+        width: fit-content;
+    }
+    .trans-display-background{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        margin: auto;
+        width: fit-content;
+    }
+    .hmepg-display-img{
+        display: flex;
+        opacity: 0.35;
+        height: 7.5em;
+        width: 7.5em;
+    }
+    .hmepg-token-img-txt{
+        color: var(--light-font);
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding: 0.75em 0 0.5em 0;
+        text-align: center;
+    }
+    /* -------------------- */
+
+
+
+    /* Token Add container */
+    .hmepg-token-add-container{
+        align-items: center;
+        display: flex;
+        height: auto;
+        margin: 1.5em 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    .hmepg-token-add-span{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    .hmepg-token-add-img{
+        display: flex;
+        height: 1.5em;
+        width: 1.5em;
+    }
+    .hmepg-token-add-txt{
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+        padding-left: 0.5em;
+    }
+    /* -------------------- */
+
+
+    
+    
+    /*  */
+    .bottom-nav-wrap{
+        background: var(--light-background);
+        border-radius: 0.15em 0.15em 0 0;
+        box-shadow: 0 0 1.5px 3.5px rgba(0, 0, 0, 0.075), 0 2px 4.5px 0 rgba(0, 0, 0, 0.05);
+        position: fixed;
+        bottom: 0px;
+        padding: 0.75em 0;
+        width: 100%;
+        height: auto;
+    }
+    .bottom-nav-btn{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+    }
+    .bottom-nav-btn-img{
+        border-radius: 0.5em;
+        display: flex;
+        height: 2.5em;
+        padding: 0.5em 2em;
+        width: 5.5em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [NOTIFICATION - PAGE] -------------------- -------------------- */
+    /*  */
+    .founder-detail-wrap{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: auto;
+        margin: auto;
+        margin-top: 2em;
+        margin-bottom: 3em;
+        width: fit-content;
+    }
+    .founder-img-wrap{
+        display: flex;
+        flex-direction: column;
+        border: 0.35em solid rgb(0, 0, 192);
+        border-radius: 50%;
+        height: auto;
+        padding: 0.5em;
+        width: fit-content;
+    }
+    .founder-img{
+        background: #4BB543;
+        border-radius: 50%;
+        overflow: hidden;
+        height: 6.5em;
+        width: 6.5em;
+    }
+    .founder-name{
+        font-size: var(--fontsize-1-3);
+        font-weight: var(--largest-font);
+        text-align: center;
+    }
+    .founder-status{
+        color: var(--light-font);
+        font-size: var(--fontsize-1);
+        font-weight: var(--largest-font);
+        text-align: center;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [REFERRAL - PAGE] -------------------- -------------------- */
+    /*  */
+    .referraltext{
+        color: #4BB543;
+    }
+    .referral-page-display{
+        padding-bottom: 0.5em;
+        height: 100%;
+        width: 100%;
+    }
+    .referral-parent {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    .refer-split{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+    }
+    .bottom-refferal-wrap{
+        display: flex;
+        flex-direction: column;
+        margin-top: 3.5em;
+        height: auto;
+        width: 100%;
+    }
+    .refer-news-wrap{
+        background: var(--dark-background);
+        display: flex;
+        height: auto;
+        padding: 0.5em 0;
+        width: 100%;
+    }
+    .refer-news-con{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: start;
+        width: 100%;
+    }
+    /* -------------------- */
+
+
+    
+    /* Left */
+    .refer-news-left{
+        border-right: 0.125em solid rgba(0, 0, 0, 0.45);
+        display: flex;
+        height: auto;
+        padding-right: 1em;
+        margin-right: 1.25em;
+        width: fit-content;
+    }
+    .refer-news-icon{
+        display: flex;
+        height: 1em;
+        width: 1em;
+    }
+    .refer-news-right {
+        font-size: var(--fontsize-0-75);
+        font-weight: var(--large-font);
+    }
+    /* -------------------- */
+
+
+    
+    /* main refer container - wrap */
+    .refer-body-wrap{
+        background: var(--yellow-overlay);
+        border-radius: 0.5em;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin-top: 3vh;
+        padding: 1em 0 0 0;
+        width: 100%;
+    }
+    
+    /* Upper body */
+    .refer-upper-body{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        width: 100%;
+    }
+    .refer-invite-txt{
+        font-size: 0.9em;
+        font-weight: var(--large-font);
+    }
+    .refer-upper-row{
+        align-items: center;
+        display: flex;
+        flex-direction: row;;
+        height: auto;
+        justify-content: center;
+        width: 100%;
+    }
+    .refer-code-txt{
+        font-size: 1.75em;
+        font-weight: var(--large-font);
+    }
+    .refer-eye-con{
+        display: flex;
+        height: 1em;
+        margin-left: 1em;
+        width: 1em;
+    }
+    .refer-lg-txt{
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        text-align: center;
+        margin-top: 0.75em;
+    }
+    .refer-sep-line{
+        background: var(--light-seperation-line);
+        height: 0.1em;
+        margin: 1em 0;
+        width: 100%;
+    }
+    /* -------------------- */
+
+    
+    
+    /* Lower container */
+    .refer-bottom-body{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    /* Bottom wrap */
+    .refer-bottom-wrap{
+        border-radius: 0 0 0.5em 0.5em;
+        background: var(--red-overlay);
+        height: auto;
+        padding: 0.5em 0;
+        margin-top: 1em;
+        width: 100%;
+    }
+    .refer-bottom-txt{
+        font-size: var(--fontsize-0-8);
+        font-weight: var(--large-font);
+        text-align: center;
+    }
+    /* -------------------- */
+
+
+    
+    /* Guide container */
+    .refer-guide-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+        width: 100%;
+    }
+    .refer-guide-con{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin-top: 0.5em;
+        justify-content: center;
+        width: fit-content;
+    }
+    .refer-guide-img-wrap {
+        background: var(--yellow-overlay);
+        display: flex;
+        border-radius: 50%;
+        height: auto;
+        padding: 0.75em;
+        width: fit-content;
+    }
+    .refer-guide-img {
+        display: flex;
+        border-radius: 50%;
+        height: 2em;
+        width: 2em;
+    }
+    .refer-guide-txt{
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+        text-align: center;
+    }
+    .refer-arrow-img{
+        display: flex;
+        height: 2em;
+        margin: 0 0.5em;
+        width: 2em;
+    }
+    /* -------------------- */
+    
+    
+    
+    /* Referral buttons*/
+    .refer-btn{
+        align-items: center;
+        background: var(--yellow-background);
+        border-radius: 0.5em;
+        cursor: pointer;
+        display: flex;
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        height: auto;
+        justify-content: center;
+        padding: 1em 0;
+        text-align: center;
+        width: 100%;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [SETTINGS - PAGE] -------------------- -------------------- */
+    /*  */
+    .unverified{
+        color: var(--unverified-red);
+    }
+    #settings-first-page{
+        background: var(--dark-background);
+    }
+    /* -------------------- */
+    
+    .settings-header-img {
+        display: flex;
+        height: 2.5em;
+        width: 2.5em;
+    }
+    .settings-username-wrap {
+        height: auto;
+        padding: 0.5em 0;
+        width: fit-content;
+    }
+    .settings-header {
+        padding-bottom: 3em;
+    }
+    .settings-img-wrap {
+        align-items: center;
+        background: var(--dark-background);
+        border-radius: 0.25em;
+        display: flex;
+        height: auto;
+        justify-content: center;
+        margin-right: 1.5em;
+        padding: 0.5em;
+        width: fit-content;
+    }
+    .settings-img {
+        display: flex;
+        height: 1.25em;
+        width: 1.25em;
+    }
+    .settings-token-name{
+        padding: 0.25em 0;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .settings-hover {
+        display: none;
+        overflow: hidden;
+        height: 1.25em;
+        width: 1.25em;
+    }
+    .token-main-wrap:hover .settings-hover {
+        display: flex;
+    }
+    .settings-link-wrap{
+        background: var(--light-background);
+        display: flex;
+        border-radius: 0.5em;
+        flex-direction: column;
+        height: auto;
+        overflow: hidden;
+        width: 100%;
+    }
+    .settings-link-wrapped{
+        background: var(--light-background);
+        display: flex;
+        border-radius: 0.5em;
+        flex-direction: column;
+        height: auto;
+        overflow: hidden;
+        width: 100%;
+    }
+    .settings-margin{
+        margin-top: 0.75em;
+    }
+    .settings-sub-token-right-con{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+    }
+    #verification-setting-background{
+        background: var(--menu-hover);
+    }
+    #verification-setting-reback-img{
+        background: rgba(0, 0, 0, 0.125);
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [TOKEN - PAGE] -------------------- -------------------- */
+    /*  */
+    .token-page-display{
+        background: var(--dark-background);
+    }
+    .token-parent-wrap{
+        display: flex;
+        flex-flow: column;
+        padding-bottom: 2.25em;
+        height: 100%;
+    }
+    .token-header-wrap{
+        background: var(--black-background);
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 0.75em;
+        width: 100%;
+    }
+    .market-bottom-radius{
+        background: var(--black-background);
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 100%;
+        height: 2em;
+        width: 100%;
+    }
+    /* -------------------- */
+    
+
+    
+    /* Website logo container for token page*/
+    .token-weblogo-wrap{
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        margin-top: 0.75em;
+        width: 100%;
+    }
+    .token-web-logo{
+        display: flex;
+        height: 1.75em;
+        width: 1.75em;
+    }
+    /* -------------------- */
+    
+
+    
+    /* Price and rate container */
+    .token-price-txt{
+        color: var(--white-font);
+        font-size: var(--fontsize-0-75);
+        font-weight: var(--large-font);
+    }
+    .token-rate-txt{
+        color: #fff;
+        font-size: var(--fontsize-0-75);
+        font-weight: var(--large-font);
+        text-align:right;
+    }
+    /* -------------------- */
+    
+
+    
+    /* Token logo image container including conversion rate */
+    .token-logo-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin: auto;
+        width: fit-content;
+        margin-top: 0.05em;
+    }
+    .token-logo-img{
+        display: flex;
+        justify-content: center;
+        height: auto;
+        width: 4.25em;
+    }
+    .token-exchange-rate{
+        color: var(--white-font);
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding-top: 0.5em;
+    }
+    /* -------------------- */
+    
+    
+    
+    /* Button container */
+    .token-btn-section{
+        margin-top: 1em;
+    }
+    .token-header-btn{
+        align-items: center;
+        background: rgba(255, 255, 255, 0.155);
+        border-radius: 0.5em;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: center;
+        padding: 0.5em 0;
+        width: 100%;
+    }
+    .token-header-btn-img-wrap{
+        background: var(--yellow-overlay);
+        border-radius: 50%;
+        margin-right: 0.5em;
+        padding: 0.5em;
+    }
+    .token-header-btn-img{
+        display: flex;
+        height: 1.05em;
+        width: 1.05em;
+    }
+    .token-header-btn-txt{
+        color: var(--white-font);
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+    }
+    /* -------------------- */
+
+
+    
+    /* Transaction history container*/
+    .token-transfer-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        margin-top: 0.75em;
+        width: 100%;
+    }
+    .token-transfer-con{
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+    }
+    .token-transfer{
+        font-size: var(--largest-font);
+    }
+    .token-history-txt{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding-top: 0.75em;
+        text-align: center;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .token-bottom-img{
+        background: var(--light-background);
+        border-radius: 0.5em 0.5em 0px 0px;
+        height: auto;
+        width: 100%;
+    }
+    /* -------------------- */
+
+
+    
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- -------------------- [THIRD SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [THIRD SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [THIRD SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [THIRD SECTION - PAGE] -------------------- -------------------- -------------------- */
+/* -------------------- -------------------- -------------------- [THIRD SECTION - PAGE] -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [PRIVACY POLICY - PAGE] -------------------- -------------------- */
+    /*  */
+    .user-validation-btn {
+        align-items: center;
+        background: var(--yellow-background);
+        border-radius: 0.5em;
+        box-shadow: var(--display-box-shadow);
+        cursor: pointer;
+        display: flex;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        justify-content: center;
+        margin: auto;
+        margin-top: 2.5em;
+        padding: 0.75em 0;
+        width: 60%;
+    }
+    .ver-margin{
+        padding-top: 2em;
+    }
+    .ver-margine{
+        margin-top: 2em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [ADD TOKEN - PAGE] -------------------- -------------------- */
+    /* Token main container */
+    .add-token-main-wrap {
+        align-items: center;
+        display: flex;
+        height: auto;
+        width: 100%;
+    }
+    .add-token-sub-wrap {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        width: 100%;
+    }
+    .add-token-absolute{
+        cursor: pointer;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    .add-token-removebtn{
+        background: var(--overlay-colour);
+        display: flex;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    .add-token-sepline{
+        border-bottom: 0.15em solid var(--light-seperation-line);
+        height: auto;
+        margin-bottom: 1em;
+        padding-bottom: 1.25em;
+        width: 100%;
+    }
+    .add-token-page-display{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        height: 100%;
+        width: 100%;
+    }
+    .add-token-parent {
+        background: var(--light-background);
+        border-radius: 0.5em 0.5em 0 0;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        padding-bottom: 2.5em;
+        width: 100%;
+    }
+    /* -------------------- */
+
+
+    
+    /*Add token header container*/
+    .add-token-header {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        margin-top: 3vh;
+        width: 100%;
+    }
+    /* Add token header left container*/
+    .add-token-left-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+    }
+    .add-token-txt-img {
+        display: flex;
+        height: 1em;
+        width: 1em;
+    }
+    .add-token-txt {
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+    }
+    .add-token-input {
+        background: transparent;
+        border: 2px solid var(--yellow-background);
+        border-radius: 5px;
+        height: 2.75em;
+        outline: none;
+        padding: 0 0.5em 0 0.5em;
+    }
+    /* -------------------- */
+
+
+
+    /* Add token Seperation line */
+    .add-token-main-token-con-pad{
+        padding: 1.025em 0px;
+    }
+    /* -------------------- */
+
+
+
+    /* Toggle button */
+    .toggle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 20;
+    }
+    .toggle input[type="checkbox"] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        opacity: 0;
+    }
+      .toggle label {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+      .toggle label:before {
+        content: '';
+        width: 2em;
+        height: 1.05em;
+        position: relative;
+        display: inline-block;
+        background: transparent;
+        border-radius: 46px;
+        border: 2px solid var(--toggle-line);
+        box-sizing: border-box;
+        transition: 0.2s ease-in;
+    }
+    .toggle label:after {
+        content: '';
+        position: absolute;
+        width: 0.65em;
+        height: 0.65em;
+        border: 2px solid var(--toggle-line);
+        box-shadow: 0 0 0 2px var(--dark-background) inset;
+        border-radius: 50%;
+        top: 0.175em;
+        left: 0.2em;
+        z-index: 2;
+        background: var(--toggle-line);
+        box-sizing: border-box;
+        transition: 0.2s ease-in;
+    }
+    .toggle input[type="checkbox"]:checked + label:before {
+        background: var(--yellow-background);
+        border: 2px solid var(--yellow-background);
+    }
+    .toggle input[type="checkbox"]:checked + label:after {
+        left: 1.15em;
+        border-color: var(--light-background);
+        box-shadow: 0 0 0 2.25px var(--yellow-background) inset;
+        background: var(--light-background);
+    }
+    .add-token-display-background{
+        align-items: center;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        margin: auto;
+        margin-top: 7.5em;
+        width: fit-content;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [LOG-OUT - PAGE] -------------------- -------------------- */
+    /*  */
+    .log-out-main{
+        background: var(--overlay-colour);
+        height: 100%;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        overflow: hidden;
+        z-index: 100;
+    }
+    .log-out-absolute{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    .log-out-wrap{
+        height: auto;
+        border-radius: 1em;
+        overflow: hidden;
+        background: var(--setting-yellow);
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .log-top{
+        background: var(--black-background);
+        margin: auto;
+        border-radius: 1em 1em 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .log-img-wrap{
+        padding: 3em 0;
+        margin: auto;
+    }
+    .log-img{
+        height: 5em;
+        width: 5em;
+    }
+    .log-header-circle {
+        background: var(--setting-yellow);
+        border-radius: 500px 500px 0px 0px;
+        bottom: -0.35em;
+        height: 0.75em;
+        left:0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        width: 0.825em;
+    }
+    .log-header-bottom-wrap {
+        background: var(--setting-yellow);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .log-header-bottom {
+        background: var(--black-background);
+        border-radius: 0 0 13em 13em;
+        height: 1em;
+        width: calc(50% - 0.4em);
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .log-bottom{
+        padding: 1.5em 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .log-bottom-txt{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding-top: 1.25em;
+        text-align: center;
+    }
+    .log-bottom-option{
+        display: flex;
+        flex-direction: row;
+        padding-top: 2em;
+        justify-content: center;
+        align-items: end;
+    }
+    .log-yes{
+        background: var(--black-background);
+        border-radius: 0.5em;
+        color: var(--white-font);
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        height: auto;
+        padding: 0.5em 1.75em;
+        width: fit-content;
+        cursor: pointer;
+        margin-right: 1em;
+    }
+    .log-no{
+        background: transparent;
+        border-radius: 0.5em;
+        border: 2px solid var(--black-background);
+        height: auto;
+        padding: 0.5em 1.75em;
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        width: fit-content;
+        cursor: pointer;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [CHANGE PASSWORD - PAGE] -------------------- -------------------- */
+    /*  */
+    .support-main-body{
+        background: var(--setting-yellow);
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .support-main-txt-dir{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        text-align: center;
+        padding: 1em 0.5em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [CONVERT SELECT - PAGE] -------------------- -------------------- */
+    /*  */
+    .convert-select-page-display{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        height: 100%;
+        width: 100%;
+    }
+    /* -------------------- */
+
+
+
+    /* Token balance*/
+    .convertselect-sub-token-right-con{
+        color: var(--light-font);
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+    }
+    .convertselect-toggle-wrap{
+        background: var(--dark-background);
+        border-radius: 500em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1em 0;
+        padding: 0.25em;
+        height: auto;
+        width: 100%;
+    }
+    .swap-absolute{
+        background: var(--light-background);
+        border-radius: 500em;
+        display: flex;
+        left: 0.25em;
+        right: auto;
+        flex-direction: row;
+        height: calc(100% - 0.5em);
+        position: absolute;
+        width: 48%;
+    }
+    .convertselect-toggle-btn{
+        align-items: center;
+        border-radius: 500em;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.5em 0;
+        height: auto;
+        width: 49%;
+    }
+    .convertselect-direction{
+        font-size: var(--fontsize-0-75);
+        font-weight: var(--large-font);
+    }
+    .convertselect-token{
+        align-items: center;
+        border-radius: 500em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: auto;
+        width: fit-content;
+    }
+    .convertselect-token-img{
+        display: flex;
+        background: var(--dark-background);
+        border-radius: 50%;
+        height: 1.25em;
+        width: 1.25em;
+    }
+    .convertselect-token-txt{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding-left: 0.25em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [ INVITE - PAGE] -------------------- -------------------- */
+    /*  */
+    .refhow-head-txt-wrap{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+    .refhow-head-lg-txt{
+        font-size: 1.5em;
+        font-weight: var(--large-font);
+        margin-top: 1em;
+        text-align: center;
+    }
+    .refhow-head-sm-txt{
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        margin-top: 0.25em;
+        text-align: center;
+    }
+    /* -------------------- */
+
+    
+    
+    /*  */
+    .refhow-align{
+        text-align: center;
+        margin: 0 auto;
+        width: 80%;
+    }
+    /* -------------------- */
+    
+
+
+    .refhow-guide-wrap{
+        background: var(--yellow-overlay);
+        border-radius: 0.5em;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding-bottom: 0.5em;
+        margin-top: 1em;
+        overflow: hidden;
+        height: auto;
+        width: 100%;
+    }
+    .refhow-guide-absolute{
+        background: var(--yellow-background);
+        border-radius: 0 0 100em 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding: 0.25em 1.25em 0.5em 0.5em;
+        height: auto;
+        width: fit-content;
+    }
+    .refhow-guide-txt{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9em;
+        font-weight: var(--large-font);
+        padding-top: 2em;
+        margin: auto;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        width: 80%;
+    }
+    .refhow-guide-img{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: auto;
+        margin-top: 1em;
+        height: auto;
+        width: 65%;
+    }
+    .border-img{
+        border-radius: 0.5em;
+    }
+    
+    /* Card Container */
+    .invite-token-wrap {
+        background: var(--dark-background);
+        border-radius: 0.5em 0.5em 0px 0px;
+        flex: 1;
+        height: auto;
+        margin-top: 1.5em;
+        padding-top: 1.4em;
+        padding-bottom: 1.25em;
+        width: 100%;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [MARKET INFORMATION - PAGE] -------------------- -------------------- */
+    /*  */
+    .market-token-name{
+        color: var(--white-font);
+        font-size: var(--fontsize-1-3);
+        font-weight: 900;
+    }
+    .market-token-price{
+        color: var(--white-font);
+        font-size: 2em;
+        font-weight: 900;
+    }
+    .market-head{
+        padding: 1em 0 7.5em 0;
+    }
+    .market-query{
+        color: var(--white-font);
+        font-size: var(--fontsize-0-85);
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .market-graph-absolute-con{
+        position: absolute;
+        margin-top: -7.5em;
+        width: 100%;
+        justify-content: center;
+        display: inline-flex;
+        flex-wrap: wrap;
+        padding: 2.5%;
+        color: rgb();
+    }
+    .crypto-token-graph{
+        display: grid;
+        max-width: 85%;
+        min-width: 80%;
+        background: rgba(248, 247, 250, 0.75);
+        backdrop-filter: blur(12.5px);
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(50px, 60px) 1fr;
+        grid-template: 
+            "info"
+            "chart";
+        border-radius: 30px;
+        overflow: hidden;
+        z-index: 25;
+    }
+    .market-graph-move-con{
+        position: relative;
+        width: 85%;
+    }
+    #cryptifyChart {
+        grid-area: chart;
+        border-radius: 0px 0px 30px 30px;
+        margin-top: auto;
+    }
+    /* -------------------- */
+
+
+
+    /* Token balance*/
+    .market-sub-token-right-con{
+        color: var(--light-font);
+        font-size: 1em;
+        font-weight: var(--large-font);
+    }
+    
+
+
+    /*  */
+    .market-parent-wrap{
+        display: flex;
+        flex-flow: column;
+        padding-bottom: 1em;
+        height: 100%;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .market-header-img {
+        cursor: pointer;
+        height: 3.5em;
+        width: 3.5em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [RECEIVE - PAGE] -------------------- -------------------- */
+    /*  */
+    .receive-page-display{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    #receive-page{
+        background: var(--light-background);
+    }
+    .dark-background{
+        background: var(--black-background);
+    }
+    .receive-parent-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+    }
+    .receive-qr-code {
+        background: #fff;
+        border-radius: 1em;
+        box-shadow: var(--display-box-shadow);
+        height: 15em;
+        padding: 2em;
+        margin: auto;
+        margin-top: 4em;
+        width: 15em;
+    }
+    .receive-wallet-address{
+        align-items: center;
+        background: var(--dark-background);
+        border-radius: 0.5em;
+        display: flex;
+        flex-direction: row;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        height: auto;
+        overflow: hidden;
+        justify-content: center;
+        margin-top: 3em;
+        padding: 0.85em 1em;
+        width: 100%;
+    }
+    .receive-network{
+        align-items: center;
+        background: var(--dark-background);
+        border-radius: 0.5em;
+        display: flex;
+        flex-direction: row;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        height: auto;
+        justify-content: center;
+        margin-top: 0.5em;
+        padding: 0.85em 1em;
+        width: 100%;
+    }
+    .receive-note{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        justify-content: center;
+        margin-top: 4em;
+        text-align: center;
+        width: 100%;
+    }
+    .receive-get-verify{
+        background: rgba(166, 50, 50, 0.2);
+        border-radius: var(--border-0-75);
+        height: auto;
+        width: fit-content;
+        margin-top: 0.75em;
+        cursor: pointer;
+        padding: 0.5em 2em;
+    }
+    /* -------------------- */
+    
+
+    
+    /*  */
+    .receive-btn-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: center;
+        margin-top: 4em;
+        width: 100%;
+    }
+    
+    .receive-btn{
+        align-items: center;
+        background: var(--yellow-background);
+        border-radius: 0.5em;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: center;
+        margin: 0 0.5em;
+        padding: 0.75em 0;
+        width: 80%;
+    }
+    .receive-btn-img-wrap{
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        display: flex;
+        margin-right: 0.75em;
+        height: auto;
+        padding: 0.45em;
+        width: fit-content;
+    }
+    .receive-btn-img{
+        display: flex;
+        height: 1.2em;
+        width: 1.2em;
+    }
+    .receive-btn-txt{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+    }
+    /* -------------------- */
+    
+
+
+    /*  link to send page */
+    .receive-send-link-btn-wrap{
+        border: 2px solid var(--light-seperation-line);
+        border-radius: 0.5em;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        padding: 0.75em 0;
+        margin: 1.5em 0 1em 0;
+        width: 100%;
+    }
+    .receive-send-link-btn{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .receive-send-left-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    .receive-send-left-img{
+        height: 1.75em;
+        width: 1.75em;
+    }
+    .receive-send-txt {
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        margin-left: 1.5em;
+    }
+    .receive-send-right-wrap{
+        background: var(--dark-background);
+        border-radius: 50%;
+        height: auto;
+        padding: 0.65em;
+        width: fit-content;
+    }
+    .receive-send-right-img{
+        display: flex;
+        height: 1.1em;
+        width: 1.1em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [ REFERRAL HISTORY- PAGE] -------------------- -------------------- */
+    /*  */
+    .referral-btn{
+        align-items: center;
+        background: var(--yellow-background);
+        border-radius: 0.5em;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: center;
+        margin: 0 0.5em;
+        padding: 0.5em 1.25em;
+        width: fit-content
+    }
+    .refhis-page-display{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    .refhis-parent{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    .refhis-card-wrap{
+        align-items: center;
+        background: var(--black-background);
+        border-radius: 0.5em;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-evenly;
+        margin: 1.5em 0;
+        padding: 1.5em 1em;
+        width: 100%;
+    }
+    .refhis-card-txt-con{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        width: fit-content;
+    }
+    .refhis-card-sm-txt{
+        color: var(--white-font);
+        font-size: var(--fontsize-0-8);
+        font-weight: var(--large-font);
+    }
+    .refhis-card-lg-txt{
+        font-size: 2em;
+        color: var(--white-font);
+        font-weight: var(--large-font);
+        font-weight: 500;
+    }
+    .refhis-card-lg-b4{
+        font-size: 0.65em;
+        font-weight: var(--large-font);
+    }
+    /* -------------------- */
+    
+    
+
+    /*  */
+    .refhis-wrap{
+        background: var(--light-background);
+        border-radius: 0.5em;
+        display: flex;
+        height: auto;
+        margin-top: 0.25em;
+        padding: 0.5em 0;
+        width: 100%;
+    }
+    /* -------------------- */
+    
+    
+
+    /*  */
+    .refhis-img-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 3em auto;
+        height: auto;
+        width: 60%;
+    }
+    .refhis-img{
+        display: flex;
+        height: 10em;
+        width: 10em;
+    }
+    .refhis-img-txt {
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+        text-align: center;
+        padding-top: 1em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [RULES - PAGE] -------------------- -------------------- */
+    /*  */
+    .rulespolicy-txt {
+        font-size: var(--fontsize-1-3);
+        font-weight: var(--large-font);
+        height: auto;
+        margin: 1em 0;
+        text-align: center;
+        width: 100%;
+    }
+    .rulespolicy-lg-txt {
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        padding-top: 1em;
+    }
+    .rulepolicy-lg-txt {
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--large-font);
+        padding-top: 1em;
+    }
+    .rulespolicy-sm-txt {
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--small-font);
+        line-height: 1.75em;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [SELECT - PAGE] -------------------- -------------------- */
+    /*  */
+    /* Token main container */
+    .send-select-token-main-wrap {
+        align-items: center;
+        display: flex;
+        height: auto;
+        width: 100%;
+    }
+    .select-page-display{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        height: 100%;
+        width: 100%;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [SEND - PAGE] -------------------- -------------------- */
+    /*  */
+    .send-page-display{
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+    .send-parent-wrap{
+        background: var(--light-background);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 0.5em;
+        height: 100%;
+        width: 100%;
+    }
+    .send-child-wrap{
+        height: auto;
+        position: relative;
+        width: 100%;
+    }
+    .send-token-balance{
+        align-items: center;
+        background: var(--dark-background);
+        border-radius: 0.5em;
+        display: flex;
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+        height: auto;
+        margin-top: 2.5em;
+        padding: 0.75em 0;
+        width: 100%;
+    }
+    /* -------------------- */
+    
+
+
+    /* Wallet address stylesheet */
+    .send-address-input-wrap{
+        display: flex;
+        height: auto;
+        margin: auto;
+        margin-top: 2em;
+        width: 90%;
+    }
+    .send-input-absolute{
+        align-items: center;
+        background: var(--yellow-background);
+        border-radius: 100em;
+        height: auto;
+        font-size: var(--fontsize-0-75);
+        font-weight: var(--large-font);
+        justify-content: center;
+        padding: 0 1em;
+        margin-top: -0.5em;
+        margin-left: 1em;
+        position: absolute;
+        width: fit-content;
+        max-width: 60%;
+        
+        --max-lines: 1;	
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: var(--max-lines);
+    }
+    .send-input{
+        background: transparent;
+        border: 2px solid var(--yellow-background);
+        border-radius: 0.5em;
+        outline: none;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding: 1.15em 0.75em 0.35em 0.75em;
+        width: 100%;
+    }
+    /* -------------------- */
+    
+    
+
+    /* Scan qr code button */
+    .send-qrcode-btn{
+        align-items: center;
+        background: var(--dark-background);
+        box-shadow: var(--display-box-shadow);
+        cursor: pointer;
+        color: var(--yellow-background);
+        border-radius: 0.5em;
+        display: flex;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        height: auto;
+        justify-content: center;
+        margin-top: 2em;
+        padding: 1em 0;
+        width: 100%;
+    }
+    .send-qrcode-img{
+        display: flex;
+        height: 1.25em;
+        margin-left: 0.5em;
+        width: 1.25em;
+    }
+    .scan-out-main{
+        background: var(--overlay-colour);
+        height: 100%;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        overflow: hidden;
+        z-index: 100;
+    }
+    /* -------------------- */
+    
+    
+    /* Send Amount container */
+    .send-amount-wrap{
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: center;
+        margin: auto;
+        margin-top: 2.5em;
+        width: 90%;
+    }
+    .send-amount-div-wrap{
+        display: flex;
+        height: auto;
+        margin-right: 4%;
+        width: 28%;
+    }
+    .send-amount-div {
+        background: transparent;
+        border: 2px solid var(--yellow-background);
+        border-radius: 0.5em;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        padding: 1.15em 0.75em 0.35em 0.75em;
+        width: 100%;
+    }
+    
+    .send-amount-input-wrap{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 68%;
+    }
+    .send-input-exchange{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: 0;
+        font-size: var(--fontsize-0-85);
+        font-weight: var(--large-font);
+        margin-left: 0.9em;
+        margin-bottom: -3.5em;
+    }
+    
+    /* Conversion rate */
+    .send-convert-wrap{
+        align-items: center;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        margin: auto;
+        margin-top: 6.5em;
+        width: 70%;
+    }
+    .send-convert-sm-txt{
+        font-size: var(--fontsize-0-85);
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        font-weight: var(--large-font);
+        max-width: 100%;
+    }
+    .send-convert-lg-txt{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        max-width: 100%;
+    }
+    #send-info-btn{
+        cursor: not-allowed;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [SUPPORT - PAGE] -------------------- -------------------- */
+    /*  */
+    .support-page-display{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 1em;
+        height: 100%;
+        width: 100%;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .unver-btn{
+        background: var(--red-overlay);
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        text-align: center;
+        border-radius: 0.5em;
+        padding: 0.75em 1em;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .support-unver-btn{
+        background: var(--yellow-background);
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        text-align: center;
+        border-radius: 0.5em;
+        padding: 0.75em 1em;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .weef{
+        width: 100%;
+        height: auto;
+    }
+    /* -------------------- */
+    
+
+
+    /*  */
+    .weief{
+        width: 100%;
+        height: auto;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [VERIFICATION - PAGE] -------------------- -------------------- */
+    /*  */
+    .wish-background {
+        background: var(--unverified-red);
+    }
+    .after-ver-wrap{
+        display: flex;
+        height: auto;
+        margin-top: 3.5em;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .after-ver-img{
+        background: var(--dark-background);
+        padding: 1em;
+        border-radius: 1em;
+        height: 10em;
+        width: 10em;
+        box-shadow: var(--display-box-shadow);
+    }
+    .after-ver-top-txt{
+        font-size: 1.8em;
+        font-weight: 700;
+        padding-top: 2em;
+        text-align: center;
+    }
+    .after-ver-txt{
+        font-size: 1em;
+        font-weight: 600;
+        padding-top: 2em;
+        text-align: center;
+    }
+    .after-ver-time{
+        font-size: 1em;
+        font-weight: 600;
+        padding-top: 2em;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    .after-ver-support{
+        background: var(--yellow-background);
+        border-radius: 0.5em;
+        height: auto;
+        font-size: 1em;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        padding: 0.6em 2em;
+        width: auto;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
+
+
+
+
+
+
+
+
+
+
+/* -------------------- -------------------- STYLES CREATED DURING [USER INFORMATION SLIDE - PAGE] -------------------- -------------------- */
+    /*  */
+    .user-info-slide-page-display{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        height: 100%;
+        width: 100%;
+    }
+    /* -------------------- */
+    
+
+    
+    /* Header container*/
+    .user-info-parent-margin{
+        padding: 1.25em 0 2em 0;
+        justify-content: space-between;
+    }
+    .userinfoslide-header-wrap{
+        align-items: center;
+        display: flex;
+        height: auto;
+        width: 100%;
+    }
+    .userinfoslide-header-icon{
+        display: flex;
+        cursor: pointer;
+        height: 1.75em;
+        position: absolute;
+        width: 1.75em;
+    }
+    .userinfoslide-header-txt{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        margin: auto;
+    }
+    /* -------------------- */
+
+    
+    
+    /* Main information container*/
+    .userinfoslide-info-wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        margin: auto;
+        margin-top: 1em;
+        width: fit-content;
+    }
+    .userinfoslide-info-img{
+        display: flex;
+        border-radius: 50%;
+        height: 5em;
+        width: 5em;
+    }
+    .userinfoslide-info {
+        font-size: 1.1em;
+        font-weight: var(--large-font);
+        margin-top: 0.5em;
+        margin-bottom: 0.15em;
+    }
+    /* -------------------- */
+    
+
+    
+    /* Registeration number*/
+    .userinfoslide-reg-con{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        margin-top: 1.25em;
+        width: 100%;
+    }
+    .userinfoslide-reg-left{
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+    }
+    .userinfoslide-reg-right{
+        color: var(--light-font);
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+    }
+    /* -------------------- */
+    
+    
+    
+    /* Note page */
+    .userinfoslide-note-wrap{
+        display: flex;
+        height: auto;
+        margin-top: 1em;
+        width: 100%;
+    }    
+    .userinfoslide-absolute {
+        background: var(--yellow-overlay);
+        border-radius: 0.5em;
+        height: 100%;
+        margin: auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 97.5%;
+    }
+    .userinfoslide-note-con{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin: 0.75em 0;
+        width: 100%;
+    }
+    .userinfoslide-note-txt{
+        font-size: var(--fontsize-0-9);
+        font-weight: var(--small-font);
+        width: fit-content;
+    }
+    .userinfoslide-note-step{
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        margin-top: 0.75em;
+        width: 100%;
+    }
+    .userinfoslide-note-step-icon{
+        border-radius: 50%;
+        display: flex;
+        height: 1.5em;
+        margin-left: 0.1em;
+        width: 1.5em;
+    }
+    .userinfoslide-note-pad{
+        padding-top: 0.75em;
+    }
+    .userinfoslide-note-mar{
+        padding-left: 1.25em;
+    }
+    /* -------------------- */
+
+    
+    
+    /* Bottom Button*/
+    .userinfoslide-btn {
+        align-items: center;
+        background: var(--yellow-background);
+        border-radius: 0.5em;
+        box-shadow: var(--display-box-shadow);
+        cursor: pointer;
+        display: flex;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        justify-content: center;
+        margin-top: 1.25em;
+        padding: 0.75em 0;
+    }
+    .userinfoslide-btn-res {
+        align-items: center;
+        background: var(--yellow-background);
+        border-radius: 0.5em;
+        box-shadow: var(--display-box-shadow);
+        cursor: pointer;
+        font-size: var(--fontsize-1);
+        font-weight: var(--large-font);
+        justify-content: center;
+        margin-top: 1.25em;
+        padding: 0.75em 0;
+    }
+    .user-personal-name{
+        text-transform: capitalize;
+    }
+    /* -------------------- */
+/* -------------------- -------------------- -------------------- -------------------- -------------------- */
