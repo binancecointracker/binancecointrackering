@@ -4,11 +4,121 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <!-- External stylesheet -->
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="icon" href="./img/binance_192.png">
         <title>Download Binance CoinTracker</title>
+        <style>
+            @media screen and (max-width: 1000px) {
+                /* */
+                .dlw-img {
+                    padding-top: 5em;
+                } 
+            }
+            @media screen and (min-width: 1020px) {
+                /* */
+                #dlw-row {
+                    flex-direction: row-reverse;
+                } 
+            }
+            /* -------------------- -------------------- STYLES CREATED DURING [NOTIFICATION - PAGE] -------------------- -------------------- */
+                /*  */
+                .dlw-parent-con{
+                    height: 100vh;
+                    background: var(--dark-background);
+                    padding: 5em 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100vw;
+                }
+                .dlw-top-abs-wrap{
+                    position: absolute;
+                    height: 100%;
+                    padding: 20%;
+                    width: 100%;
+                    background: var(--yellow-background);
+                    border-radius: 50%;
+                }
+                .dlw-main-wrap{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: auto;
+                    justify-content: center;
+                }
+                .dlw-lg-txt{
+                    font-size: 2em;
+                    text-align: center;
+                    font-weight: 800;
+                }
+                .dlw-md-txt{
+                    font-size: 1.25em;
+                    text-align: center;
+                    font-weight: 600;
+                }
+                .dlw-sm-txt{
+                    font-size: 0.9em;
+                    text-align: center;
+                    font-weight: 600;
+                    padding: 1.5em 0.25em;
+                }
+                .dlw-install-btn{
+                    background: var(--black-background);
+                    color: var(--white-font);
+                    font-size: 0.9em;
+                    border-radius: 0.6em;
+                    font-weight: 600;
+                    cursor: pointer;
+                    padding: 0.5em 2em;
+                }
+                /* -------------------- */
+            /* -------------------- -------------------- -------------------- -------------------- -------------------- */
+        </style>
     </head>
     <body>
-        <button id="installApp">Download Binance CoinTracker app</button>
+        <!-- <button id="installApp">Download Binance CoinTracker app</button> -->
+        <div class="dlw-parent-con">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row align-items-center" id="dlw-row">
+                        <!-- Image container -->
+                        <div class="col-sm-12 col-md-12 col-lg-6 p-4 mx-auto">
+                            <div class="dlw-main-wrap">
+                                <div class="dlw-lg-txt">DOWNLOAD</div>
+                                <div class="dlw-md-txt">OUR APP </div>
+                                <div class="dlw-sm-txt">Buy, sell, hold and trade Bitcoin & other cryptocurrencies simply and safely. Click the install button below to install app.</div>
+                                <div class="dlw-install-btn" id="dlw-install-btn">INSTALL APP NOW</div>
+                            </div>
+                        </div>
+
+                        <!-- Text container -->
+                        <div class="col-sm-11 col-md-9 col-lg-6 p-4 mx-auto">
+                            <div class="dlw-main-wrap dlw-img">
+                                <div class="dlw-top-abs-wrap">
+                                    <div class="dlw-top-abs"></div>
+                                </div>
+                                <img src="./img/deviceframe.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
+    <script src="js/bootstrap.js"></script>
     <script>
+        const installApp = document.getElementById('dlw-install-btn');
+        installApp.addEventListener('click', async () => {
+            if (deferredPrompt !== null) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    deferredPrompt = null;
+                }
+            }
+        });
     </script>
 </html>

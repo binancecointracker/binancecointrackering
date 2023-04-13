@@ -61,24 +61,6 @@
     }
     /*******************************/
     /* -------------------- */
-    
-
-
-    /*  */
-
-    /* -------------------- */
-    
-
-
-    /*  */
-
-    /* -------------------- */
-    
-
-
-    /*  */
-
-    /* -------------------- */
 /* -------------------- -------------------- -------------------- -------------------- -------------------- */
 
 
@@ -117,7 +99,7 @@
 
 /* -------------------- -------------------- STYLES CREATED DURING [MENU - PAGE] -------------------- -------------------- */
     /* -------------------- Mobile responsive view -------------------- */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 650px) {
             /* Menu header container */
             .menu-parent-container {
                 width: 80%;
@@ -144,7 +126,7 @@
 
 
     /* -------------------- Tablet responsive view -------------------- */
-        @media screen and  (min-width: 768px) and (max-width: 992px) {
+        @media screen and  (min-width: 650px) and (max-width: 992px) {
             /* Menu header container */
             .menu-parent-container {
                 max-width: 65%;
@@ -281,7 +263,7 @@
 
 /* -------------------- -------------------- STYLES CREATED DURING [CONVERT - PAGE] -------------------- -------------------- */
         /* -------------------- Mobile responsive view -------------------- */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 650px) {
             /*  */
             .convert-header-txt {
                 display: bold;
@@ -298,7 +280,7 @@
 
 
     /* -------------------- Tablet responsive view -------------------- */
-        @media screen and  (min-width: 768px) and (max-width: 992px) {
+        @media screen and  (min-width: 650px) and (max-width: 992px) {
             /*  */
             .convert-header-txt {
                 display: bold;
@@ -356,7 +338,7 @@
 
 /* -------------------- -------------------- STYLES CREATED DURING [LOG-OUT - PAGE] -------------------- -------------------- */
         /* -------------------- Mobile responsive view -------------------- */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 650px) {
             /*  */
             .log-out-wrap{
                 width: 70%;
@@ -370,7 +352,7 @@
 
 
     /* -------------------- Tablet responsive view -------------------- */
-        @media screen and  (min-width: 768px) and (max-width: 992px) {
+        @media screen and  (min-width: 650px) and (max-width: 992px) {
             /*  */
             .log-out-wrap{
                 width: 50%;
@@ -419,7 +401,7 @@
 
 /* -------------------- -------------------- STYLES CREATED DURING [HOME - PAGE] -------------------- -------------------- */
         /* -------------------- Mobile responsive view -------------------- */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 650px) {
             /*  */
             #menu-dis-btn{
                 overflow: hidden;
@@ -446,7 +428,7 @@
 
 
     /* -------------------- Tablet responsive view -------------------- */
-        @media screen and  (min-width: 768px) and (max-width: 992px) {
+        @media screen and  (min-width: 650px) and (max-width: 992px) {
             /*  */
             #menu-dis-btn{
                 overflow: hidden;
@@ -523,7 +505,7 @@
     /* -------------------- -------------------- -------------------- */
 /* -------------------- -------------------- -------------------- -------------------- -------------------- *//* -------------------- -------------------- STYLES CREATED DURING [SEND - PAGE] -------------------- -------------------- */
         /* -------------------- Mobile responsive view -------------------- */
-        @media screen and (max-width: 768px) {/*  */
+        @media screen and (max-width: 650px) {/*  */
             .btn-display{
                 display: flex;
             }
@@ -536,7 +518,7 @@
 
 
     /* -------------------- Tablet responsive view -------------------- */
-        @media screen and  (min-width: 768px) and (max-width: 992px) {
+        @media screen and  (min-width: 650px) and (max-width: 992px) {
             /*  */
             .btn-display{
                 display: flex;
@@ -585,7 +567,7 @@
 
 /* -------------------- -------------------- STYLES CREATED DURING [SETTINGS - PAGE] -------------------- -------------------- */
         /* -------------------- Mobile responsive view -------------------- */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 650px) {
             /*  */
             .settings-page-display{
                 padding-bottom: 6.5em;
@@ -599,7 +581,7 @@
 
 
     /* -------------------- Tablet responsive view -------------------- */
-        @media screen and  (min-width: 768px) and (max-width: 992px) {
+        @media screen and  (min-width: 650px) and (max-width: 992px) {
             /*  */
             .settings-page-display{
                 padding-bottom: 2em;
@@ -669,7 +651,7 @@
 
 /* -------------------- -------------------- STYLES CREATED DURING [ADD TOKEN - PAGE] -------------------- -------------------- */
         /* -------------------- Mobile responsive view -------------------- */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 650px) {
             /*  */
             .add-token-parent {
                 height: 85%;
@@ -683,7 +665,7 @@
 
 
     /* -------------------- Tablet responsive view -------------------- */
-        @media screen and  (min-width: 768px) and (max-width: 992px) {
+        @media screen and  (min-width: 650px) and (max-width: 992px) {
             /*  */
             .add-token-parent {
                 height: 77.5%;
@@ -763,7 +745,7 @@
 
 
     /* -------------------- Tablet responsive view -------------------- */
-        @media screen and  (min-width: 768px) and (max-width: 992px) {
+        @media screen and  (min-width: 650px) and (max-width: 992px) {
             /*  */
             .settings-link-wrap{
                 margin-top: 33.5%;
@@ -801,7 +783,7 @@
     /* -------------------- -------------------- -------------------- */
 /* -------------------- -------------------- -------------------- -------------------- -------------------- *//* -------------------- -------------------- STYLES CREATED DURING [USER INFORMATION SLIDE - PAGE] -------------------- -------------------- */
         /* -------------------- Mobile responsive view -------------------- */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 650px) {
             /*  */
             .userinfoslide-btn-res{
                 display: flex;
@@ -815,7 +797,7 @@
 
 
     /* -------------------- Tablet responsive view -------------------- */
-        @media screen and  (min-width: 768px) and (max-width: 992px) {
+        @media screen and  (min-width: 650px) and (max-width: 992px) {
             /*  */
             .userinfoslide-btn-res{
                 display: flex;

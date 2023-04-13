@@ -1810,7 +1810,7 @@
         box-shadow: 0 0 1.5px 3.5px rgba(0, 0, 0, 0.075), 0 2px 4.5px 0 rgba(0, 0, 0, 0.05);
         position: fixed;
         bottom: 0px;
-        padding: 0.75em 0;
+        padding: 0.3em 0;
         width: 100%;
         height: auto;
     }
@@ -1825,7 +1825,7 @@
     .bottom-nav-btn-img{
         border-radius: 0.5em;
         display: flex;
-        height: 2.5em;
+        height: 2em;
         padding: 0.5em 2em;
         width: 5.5em;
     }
