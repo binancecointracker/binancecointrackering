@@ -21,7 +21,7 @@
     ],
     "theme_color": "#F8F7FA",
     "background_color": "#0C0E12",
-    "start_url": "./index.html/",
+    "start_url": "/BinanceCoinTracker/",
     "display": "standalone",
     "orientation": "portrait"
 }
