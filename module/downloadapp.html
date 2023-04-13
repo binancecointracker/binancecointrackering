@@ -121,14 +121,15 @@
     <script src="js/bootstrap.js"></script>
     <script>
         const installApp = document.getElementById('dlw-install-btn');
-        installApp.addEventListener('click', async () => {
-            if (deferredPrompt !== null) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    deferredPrompt = null;
-                }
-            }
+        let prompt;
+        window.addEventListener('beforeinstallprompt', function(e){
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            prompt = e;
         });
+        installButton.addEventListener('click', function(){
+            prompt.prompt();
+        })
     </script>
 </html>
