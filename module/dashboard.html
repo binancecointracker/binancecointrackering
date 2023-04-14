@@ -22,7 +22,7 @@
         <!-- Title of the page -->
         <title>Binance CoinTracker</title>
     </head>
-    <body>
+    <body onload="popout()">
         <div id="preloader-background" style="justify-content: center;">
 			<div class="preload">
 				<img x="0px" y="0px" width="50px" style="position: absolute;" height="50px" src="img/binance.png" alt="" srcset="">
@@ -433,36 +433,70 @@
             <!-- -------------------- -------------------- -------------------- -->
 
             
-                <!-- -------------------- Log-out -------------------- -->
-                <div class="scan-out-main">
-                    <div class="log-out-absolute" onclick="scanout()"></div>
-                    <div class="log-out-wrap">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="log-top">
-                                    <div class="log-img-wrap"><div class="log-img"><img src="img/binance.png" class="img-fluid"></div></div>
-                                    <div  class="log-header-circle"></div>
-                                </div>
-                                <!-- -------------------- Header Bottom -------------------- -->
-                                <div class="log-header-bottom-wrap">
-                                    <div class="log-header-bottom"></div>
-                                    <div class="log-header-bottom"></div>
-                                </div>
-                                <!-- -------------------- -------------------- -------------------- -->
-                                <!-- -------------------- -------------------- -------------------- -->
+            <!-- -------------------- Log-out -------------------- -->
+            <div class="scan-out-main">
+                <div class="log-out-absolute" onclick="scanout()"></div>
+                <div class="log-out-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="log-top">
+                                <div class="log-img-wrap"><div class="log-img"><img src="img/binance.png" class="img-fluid"></div></div>
+                                <div  class="log-header-circle"></div>
                             </div>
+                            <!-- -------------------- Header Bottom -------------------- -->
+                            <div class="log-header-bottom-wrap">
+                                <div class="log-header-bottom"></div>
+                                <div class="log-header-bottom"></div>
+                            </div>
+                            <!-- -------------------- -------------------- -------------------- -->
+                            <!-- -------------------- -------------------- -------------------- -->
+                        </div>
 
-                            <div class="col-12">
-                                <div class="log-bottom">
-                                    <div class="log-bottom-txt scan-bottom-txt"></div>
-                                    <div class="log-bottom-option scan-bottom-option">
-                                        
-                                    </div>
+                        <div class="col-12">
+                            <div class="log-bottom">
+                                <div class="log-bottom-txt scan-bottom-txt"></div>
+                                <div class="log-bottom-option scan-bottom-option">
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- -------------------- -------------------- -------------------- -->
+            <!-- -------------------- -------------------- -------------------- -->
+
+        
+            <!-- -------------------- PopState-out -------------------- -->
+            <div class="pop-out-main">
+                <div class="log-out-absolute" onclick="popout()"></div>
+                <div class="log-out-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="log-top">
+                                <div class="log-img-wrap"><div class="log-img"><img src="img/binance.png" class="img-fluid"></div></div>
+                                <div  class="log-header-circle"></div>
+                            </div>
+                            <!-- -------------------- Header Bottom -------------------- -->
+                            <div class="log-header-bottom-wrap">
+                                <div class="log-header-bottom"></div>
+                                <div class="log-header-bottom"></div>
+                            </div>
+                            <!-- -------------------- -------------------- -------------------- -->
+                            <!-- -------------------- -------------------- -------------------- -->
+                        </div>
+
+                        <div class="col-12">
+                            <div class="log-bottom">
+                                <div class="log-bottom-txt">Are you sure you want to exit Binance CoinTracker?</div>
+                                <div class="log-bottom-option">
+                                    <div class="log-no" onclick="popout()">No, continue</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- -------------------- -------------------- -------------------- -->
             <!-- -------------------- -------------------- -------------------- -->
 
@@ -498,9 +532,9 @@
                     </div>
                 </div>
             </div>
+            <!-- -------------------- -------------------- -------------------- -->
+            <!-- -------------------- -------------------- -------------------- -->
         </div>
-        <!-- -------------------- -------------------- -------------------- -->
-        <!-- -------------------- -------------------- -------------------- -->
         
     </body>
     <script src="js/bootstrap.js"></script>
@@ -597,14 +631,6 @@
     <!-- -------------------- -------------------- -------------------- -->
     <script type="text/javascript">
         // 
-        function chkInternetStatus() {
-            if(navigator.onLine) {
-                alert("Hurray! You're online!!!");
-            } else {
-                alert("Oops! You're offline. Please check your network connection...");
-            }
-        };
-        // 
         function copyToken() {
             let imgTag = ' <img src="img/check-mark.png" style="height:1.25em;width:1.25em;margin-left: 0.125em">'
             var $copyText = document.getElementById("receive-wallet-address").innerText;
@@ -620,7 +646,6 @@
                 button.innerText = 'Error';
             });
         };
-        // 
         //  -------------------- -------------------- --------------------
     </script>
     <!-- -------------------- -------------------- -------------------- -->
@@ -733,11 +758,10 @@
 		}
         // 
 
-        // 
+        // preloader
         function preloader(){
 			document.getElementById("preloader-background").style.display = "none";
-		}//preloader
-
+		}
 		//remove/comment this one to check the website in loading state
 		window.onload = preloader();
     </script>

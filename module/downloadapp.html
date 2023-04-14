@@ -84,6 +84,9 @@
                     cursor: pointer;
                     padding: 0.5em 2em;
                 }
+                #Information{
+                    display: none;
+                }
                 /* -------------------- */
             /* -------------------- -------------------- -------------------- -------------------- -------------------- */
         </style>
@@ -101,6 +104,7 @@
                                 <div class="dlw-md-txt">OUR APP </div>
                                 <div class="dlw-sm-txt">Buy, sell, hold and trade Bitcoin & other cryptocurrencies simply and safely. Click the install button below to install app.</div>
                                 <div class="dlw-install-btn" id="dlw-install-btn">INSTALL APP NOW</div>
+                                <div class="dlw-install-btn" id="Information">APP ALREADY INSTALLED</div>
                             </div>
                         </div>
 
@@ -131,5 +135,9 @@
         installApp.addEventListener('click', function(){
             prompt.prompt();
         })
+        window.addEventListener('appinstalled', async function(e) {
+            installApp.style.display = "none";
+            document.getElementById('Information').style.display = "flex";
+        });
     </script>
 </html>

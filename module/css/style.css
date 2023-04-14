@@ -2763,6 +2763,20 @@
         width: fit-content;
         cursor: pointer;
     }
+
+    
+    .pop-out-main{
+        background: var(--overlay-colour);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        overflow: hidden;
+        z-index: 100;
+    }
     /* -------------------- */
 /* -------------------- -------------------- -------------------- -------------------- -------------------- */
 
@@ -3971,5 +3985,6 @@
     .user-personal-name{
         text-transform: capitalize;
     }
+    /* -------------------- */
     /* -------------------- */
 /* -------------------- -------------------- -------------------- -------------------- -------------------- */

@@ -3525,7 +3525,7 @@
         }
         // --------------------   
         
-        // Login
+        // Scan
         function scanin() {
             var logg = document.getElementsByClassName("scan-out-main");
             for (let i = 0; i < logg.length; i++) {
@@ -3534,12 +3534,33 @@
         }
         // -------------------- 
         
-        // Login
+        // Scan
         function scanout() {
             var logg = document.getElementsByClassName("scan-out-main");
             for (let i = 0; i < logg.length; i++) {
                 logg[i].style.display = "none";
             }
         }
+        
+        
+        // Pop
+        function popin() {
+            var logg = document.getElementsByClassName("pop-out-main");
+            for (let i = 0; i < logg.length; i++) {
+                logg[i].style.display = "flex";
+            }
+        }
+        // -------------------- 
+        
+        // Pop
+        function popout() {
+            var logg = document.getElementsByClassName("pop-out-main");
+            for (let i = 0; i < logg.length; i++) {
+                logg[i].style.display = "none";
+            }
+            window.history.pushState('', null, './')
+            window.addEventListener("popstate", popin());
+        };
+        // --------------------   
         // --------------------   
     //  -------------------- -------------------- -------------------- 
