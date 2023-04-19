@@ -341,7 +341,7 @@
         @media screen and (max-width: 650px) {
             /*  */
             .log-out-wrap{
-                width: 70%;
+                width: 90%;
             }
             /* -------------------- */
         }
@@ -355,7 +355,7 @@
         @media screen and  (min-width: 650px) and (max-width: 992px) {
             /*  */
             .log-out-wrap{
-                width: 50%;
+                width: 55%;
             }
             /* -------------------- */
         }

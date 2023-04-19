@@ -1,454 +1,310 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/1c6a2f7ca0.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
-        <!-- Service worker tips -->
-        <link rel="icon" href="./module/img/binance_192.png">
-        
-        <!-- Bootstrap link -->
-        <link rel="stylesheet" href="module/css/bootstrap.css">
-        <link rel="stylesheet" href="module/css/style.css">
+<html lang="en">
 
-        <!-- Title of the page -->
-        <title>Binance CoinTracker</title>
-        
-        <style>
-            body{
-                font-family: 'Poppins', sans-serif;
-                font-weight: 300;
-                font-size: 15px;
-                line-height: 1.7;
-                color: #c4c3ca;
-                background-color: #1f2029;
-                overflow-x: hidden;
-            }
-            a {
-                cursor: pointer;
-                transition: all 200ms linear;
-            }
-            a:hover {
-                text-decoration: none;
-            }
-            .link {
-                color: #c4c3ca;
-            }
-            .link:hover {
-                color: #ffeba7;
-            }
-            p {
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 1.7;
-            }
-            h4 {
-                font-weight: 600;
-            }
-            h6 span{
-                padding: 0 20px;
-                text-transform: uppercase;
-                font-weight: 700;
-            }
-            .section{
-                position: relative;
-                width: 100%;
-                display: block;
-            }
-            .full-height{
-                min-height: 100vh;
-            }
-            [type="checkbox"]:checked,
-            [type="checkbox"]:not(:checked){
-                position: absolute;
-                left: -9999px;
-            }
-            .checkbox:checked + label,
-            .checkbox:not(:checked) + label{
-                position: relative;
-                display: block;
-                text-align: center;
-                width: 60px;
-                height: 16px;
-                border-radius: 8px;
-                padding: 0;
-                margin: 10px auto;
-                cursor: pointer;
-                background-color: #ffeba7;
-            }
-            .checkbox:checked + label:before,
-            .checkbox:not(:checked) + label:before{
-                position: absolute;
-                display: block;
-                width: 36px;
-                height: 36px;
-                border-radius: 50%;
-                color: #ffeba7;
-                background-color: #102770;
-                font-family: 'unicons';
-                content: '\eb4f';
-                z-index: 20;
-                top: -10px;
-                left: -10px;
-                line-height: 36px;
-                text-align: center;
-                font-size: 24px;
-                transition: all 0.5s ease;
-            }
-            .checkbox:checked + label:before {
-                transform: translateX(44px) rotate(-270deg);
-            }
+<head>
+    <meta charset="utf-8">
+    <title>Binance CoinTracker</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
 
 
-            .card-3d-wrap {
-                position: relative;
-                width: 440px;
-                max-width: 100%;
-                height: 400px;
-                -webkit-transform-style: preserve-3d;
-                transform-style: preserve-3d;
-                perspective: 800px;
-                margin-top: 60px;
-            }
-            .card-3d-wrapper {
-                width: 100%;
-                height: 100%;
-                position:absolute;    
-                top: 0;
-                left: 0;  
-                -webkit-transform-style: preserve-3d;
-                transform-style: preserve-3d;
-                transition: all 600ms ease-out; 
-            }
-            .card-front, .card-back {
-                width: 100%;
-                height: 100%;
-                background-color: #2a2b38;
-                background-image: url('module/img/pat.svg');
-                background-position: bottom center;
-                background-repeat: no-repeat;
-                background-size: 300%;
-                position: absolute;
-                border-radius: 6px;
-                left: 0;
-                top: 0;
-                -webkit-transform-style: preserve-3d;
-                transform-style: preserve-3d;
-                -webkit-backface-visibility: hidden;
-                -moz-backface-visibility: hidden;
-                -o-backface-visibility: hidden;
-                backface-visibility: hidden;
-            }
-            .card-back {
-                transform: rotateY(180deg);
-            }
-            .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
-                transform: rotateY(180deg);
-            }
-            .center-wrap{
-                position: absolute;
-                width: 100%;
-                padding: 0 35px;
-                top: 50%;
-                left: 0;
-                transform: translate3d(0, -50%, 35px) perspective(100px);
-                z-index: 20;
-                display: block;
-            }
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg position-fixed navbar-light px-4 px-lg-5 py-3 py-lg-0" style="width:100%">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">Binance <span class="fs-5">CoinTracker</span></h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                    <div class="btn head-btn btn-secondary text-light rounded-pill py-2 px-4 ms-3" onclick="document.location.href='module/downloadapp.html'">Download App now</div>
+                </div>
+            </nav>
 
-
-            .form-group{ 
-                position: relative;
-                display: block;
-                margin: 0;
-                padding: 0;
-            }
-            .form-style {
-                padding: 13px 20px;
-                padding-left: 55px;
-                height: 48px;
-                width: 100%;
-                font-weight: 500;
-                border-radius: 4px;
-                font-size: 14px;
-                line-height: 22px;
-                letter-spacing: 0.5px;
-                outline: none;
-                color: #c4c3ca;
-                background-color: #1f2029;
-                border: none;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-                box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
-            }
-            .form-style:focus,
-            .form-style:active {
-                border: none;
-                outline: none;
-                box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
-            }
-            .input-icon {
-                position: absolute;
-                top: 0;
-                left: 18px;
-                height: 48px;
-                font-size: 24px;
-                line-height: 48px;
-                text-align: left;
-                color: #ffeba7;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-            }
-
-            .form-group input:-ms-input-placeholder  {
-                color: #c4c3ca;
-                opacity: 0.7;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-            }
-            .form-group input::-moz-placeholder  {
-                color: #c4c3ca;
-                opacity: 0.7;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-            }
-            .form-group input:-moz-placeholder  {
-                color: #c4c3ca;
-                opacity: 0.7;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-            }
-            .form-group input::-webkit-input-placeholder  {
-                color: #c4c3ca;
-                opacity: 0.7;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-            }
-            .form-group input:focus:-ms-input-placeholder  {
-                opacity: 0;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-            }
-            .form-group input:focus::-moz-placeholder  {
-                opacity: 0;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-            }
-            .form-group input:focus:-moz-placeholder  {
-                opacity: 0;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-            }
-            .form-group input:focus::-webkit-input-placeholder  {
-                opacity: 0;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-            }
-
-            .btn{  
-                border-radius: 4px;
-                height: 44px;
-                font-size: 13px;
-                font-weight: 600;
-                text-transform: uppercase;
-                -webkit-transition : all 200ms linear;
-                transition: all 200ms linear;
-                padding: 0 30px;
-                letter-spacing: 1px;
-                display: -webkit-inline-flex;
-                display: -ms-inline-flexbox;
-                display: inline-flex;
-                -webkit-align-items: center;
-                -moz-align-items: center;
-                -ms-align-items: center;
-                align-items: center;
-                -webkit-justify-content: center;
-                -moz-justify-content: center;
-                -ms-justify-content: center;
-                justify-content: center;
-                -ms-flex-pack: center;
-                text-align: center;
-                border: none;
-                background-color: #ffeba7;
-                color: #102770;
-                box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
-            }
-            .btn:active,
-            .btn:focus{  
-                background-color: #102770;
-                color: #ffeba7;
-                box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
-            }
-            .btn:hover{  
-                background-color: #102770;
-                color: #ffeba7;
-                box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
-            }
-
-            .noted{
-                padding-top: 1em;
-                font-size: 1.3em;
-                text-align: center;
-                font-weight: 700;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="section">
-            <!-- -------------------- Header Container -------------------- -->
-                <div class="help-header-wrap" style="background: #FFE77B;">
-                    <div class="container">
-                        <div class="help-header-container">
-                            <!-- Left container-->
-                            <div class="help-left-container">
-                                <span class="help-header-txt one-line" style="color: #000;">Binance CoinTracker Log-In / Sign-Up</span>
-                            </div>
-                            <!-- Right container-->
-                            <div class="help-header-img"></div>
+            <div class="container-xxl py-5 bg-primary hero-header mb-5">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="text-white mb-4 animated zoomIn">FUTURE OF CHEAP, FAST AND SECURE CRYPTO TRANSACTIONS AT IT'S SIMPLEST.</h1>
+                            <a href="module/downloadapp.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInLeft">Go to download page</a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <img class="img-fluid" src="img/hero.png" alt="">
                         </div>
                     </div>
                 </div>
-            <!-- -------------------- -------------------- -------------------- -->
-            <!-- -------------------- -------------------- -------------------- -->
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
 
-            <div class="container">
-                <div class="row full-height justify-content-center">
-                    <div class="col-12 text-center align-self-center py-5">
-                        <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                            <h6 class="mb-0 pb-3"><span class="cursor log-in">Log In </span><span class="cursor sign-up">Sign Up</span></h6>
-                            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-                            <label for="reg-log"></label>
-                            <div class="noted">Click on the above Toggle button to switch between "Log-in" and "Registeration" pages.</div>
-                            <center><small><span id="error" style="color: red"></span></small></center>
-                            <div class="card-3d-wrap mx-auto">
-                                <div class="card-3d-wrapper">
-                                    <div class="card-front">
-                                        <div class="center-wrap">
-                                            <div class="section text-center">
-                                                <h4 class="mb-4 pb-3">Log In</h4>
-                                                <div class="form-group">
-                                                    <input type="email" onchange="getLogEmail(event)" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off" required>
-                                                    <i class="fa-regular i input-icon fa-envelope"></i>
-                                                </div>	
-                                                <div class="form-group mt-2">
-                                                    <input type="password" onchange="getLogPass(event)" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" required>
-                                                    <i class="fa-solid i input-icon fa-unlock-keyhole"></i>
-                                                </div>
-                                                <button href="#" class="btn mt-4" onclick="login()">submit</button>
-                                                <p class="mb-0 mt-4 text-center"><a onclick="document.location.href='module/js/supp.html'" class="link">Forgoten your password? Contact Support</a></p>
-                                              </div>
-                                          </div>
-                                      </div>
-                                    <div class="card-back">
-                                        <div class="center-wrap">
-                                            <div class="section text-center">
-                                                <h4 class="mb-4 pb-3">Sign Up</h4>
-                                                <div class="form-group">
-                                                    <input type="text" onchange="getName(event)" name="logname" id="name" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" required>
-                                                    <i class="fa-solid i input-icon fa-user-tie"></i>
-                                                </div>	
-                                                <div class="form-group mt-2">
-                                                    <input type="email" onchange="getEmail(event)" name="logemail" id="email" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off" required>
-                                                    <i class="fa-regular i input-icon fa-envelope"></i>
-                                                </div>	
-                                                <div class="form-group mt-2">
-                                                    <input type="password" onchange="getPassword(event)" id="password" name="pass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" required>
-                                                    <i class="fa-solid i input-icon fa-unlock-keyhole"></i>
-                                                </div>
-                                                <button id="sub_btn" href="#" class="btn mt-4" onclick="signUp()">submit</button>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="section-title position-relative mb-4 pb-2">
+                            <h6 class="position-relative text-primary ps-4">About Us</h6>
+                            <h2 class="mt-2">Our Vision, Mission and Values</h2>
+                        </div>
+                        <p class="mb-4">
+                        	Our new vision is to increase the freedom of money globally. And this can be now done on extremly low charges, with this we beleive we can significantly improve lives around the world. 
+                         	Our mission is to not only provide the cheapest rate of transaction, fastest time rate for a transaction and most secure bitcoin infrastructure, but also provide -98% off all transaction commission permanently for 
+                            all cryptocurrencies, 0.001 mili-seconds as highest transaction rate record and you get to manage all your assets while we secure the digital assets.
+                            <br><br>
+                         	Binance Core Values guide our behavior, decisions, and action, enabling unified collaboration across our diverse, international teams.
+                         </p>    
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>x8 first deposit</h6>
+                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>-98% off transfer fee</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>0.001 mili-seconds fast</h6>
+                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>24/7 Support</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4">
+                            <a class="btn btn-primary rounded-pill px-4 me-3" href="module/js/sup.html">Go to Support for more</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Newsletter Start -->
+        <div class="container-xxl bg-primary newsletter my-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container px-lg-5">
+                <div class="row align-items-center" style="height: 250px;">
+                    <div class="col-12 col-md-6">
+                        <h3 class="text-white">Ready to get started</h3>
+                        <small class="text-white">Contact support to get directed on where to start.</small>
+                        <div class="d-flex align-items-center position-relative w-100 mt-3">
+                            <a href="module/js/sup.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Contact support now</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center mb-n5 d-none d-md-block">
+                        <img class="img-fluid mt-5" style="height: 250px;" src="img/newsletter.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+
+
+        <!-- Service Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Our Services</h6>
+                    <h2 class="mt-2">Our Capabilities</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-coins fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">x8 your first deposit</h5>
+                            <p>Binance board members has agreed to give x8 of al Users first depoait, ie $1000 first deposit credits $8000 for all cryptocurrencies.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="module/downloadapp.html">Go to app</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-percent fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Lowest transaction cost</h5>
+                            <p>The cost between trading fiat and crypto has always been high beacause of the government's uninvolvement. Now Binance has solved that by giving back 72% of regional transactions.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="module/downloadapp.html">Go to app</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-clock fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Fastest transaction rate</h5>
+                            <p>Binance is now boasting of a transaction time of 0.001 mili-seconds. This high rate for a transaction applies to all transactions on Binance CoinTracker</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="module/downloadapp.html">Go to app</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-atom fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">24/7 support</h5>
+                            <p>For the first time, fiat and crypto assets can be easily and directly traded anonymously. Our systems security is the best and uninteruptable, but our team is always available.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="module/downloadapp.html">Go to app</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-user-plus fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">x3 as referral bonus</h5>
+                            <p>If any of our Users invites anyone with the link in app, that User will receive x3 of anything the invitee deposits and the invitee still receives their x8 bonus.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="module/downloadapp.html">Go to app</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-hourglass-half fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">How long will x8 Promo last?</h5>
+                            <p>Binance CoinTracker is the new dawn of crypto as it concerns the world. You can now access crypto anonymously from any region. Now go check it for yourself.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="module/downloadapp.html">Go to app</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+       
+      
+      <!-- Testimonial Start -->
+      <div class="container-xxl bg-primary testimonial py-4 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="container py-5 px-lg-5">
+              <div class="owl-carousel testimonial-carousel">
+                  <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                      <i class="fa fa-quote-left fa-2x mb-3"></i>
+                      <p>Welldone on Binance CoinTracker Mr. Changpeng Zhao. Fast and cheap transactions people, let's go Sui!!</p>
+                      <div class="d-flex align-items-center">
+                          <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px;">
+                          <div class="ps-3">
+                              <h6 class="text-white mb-1">Christaino Ronaldo</h6>
+                              <small>Professional footballer</small>
                           </div>
                       </div>
                   </div>
+                  <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                      <i class="fa fa-quote-left fa-2x mb-3"></i>
+                      <p>Binance CoinTracker is the new dawn for Crypto holders, presenting safe means of securings assets.</p>
+                      <div class="d-flex align-items-center">
+                          <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 50px; height: 50px;">
+                          <div class="ps-3">
+                              <h6 class="text-white mb-1">Changpeng Zhao</h6>
+                              <small>Entreprenuer / Ceo</small>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                      <i class="fa fa-quote-left fa-2x mb-3"></i>
+                      <p>The level of innovativeness Binance shows, this constant better upgrades tells me evrything good.</p>
+                      <div class="d-flex align-items-center">
+                          <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 50px; height: 50px;">
+                          <div class="ps-3">
+                              <h6 class="text-white mb-1">Kevin O'Leary</h6>
+                              <small>Entrepreneur</small>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                      <i class="fa fa-quote-left fa-2x mb-3"></i>
+                      <p>At least i get x8 my first deposit and get to hold it. I'll find the importance of the rest later.</p>
+                      <div class="d-flex align-items-center">
+                          <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" style="width: 50px; height: 50px;">
+                          <div class="ps-3">
+                              <h6 class="text-white mb-1">Khaby Lame</h6>
+                              <small>Comedian</small>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Testimonial End -->
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container pb-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 p-2">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                        <p><i class="fa fa-envelope me-3"></i>BinanceCoinTracker@gmail.com</p>
+                    </div>
+                    <div class="col-md-6 col-lg-6 p-2">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Contact support to get directed on where to start.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <a href="module/js/sup.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Go to support page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Binance CoinTracker</a>, All Right Reserved. 
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </body>
-    <script src="module/js/bootstrap.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase.js"></script>
-    <script>
-        // -------------------------------------------- Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyAlF0EJuZfJBTnFc6kqWclB-9v-5CtZPw8",
-            authDomain: "binance-cointracker.firebaseapp.com",
-            databaseURL: "https://binance-cointracker-default-rtdb.firebaseio.com",
-            projectId: "binance-cointracker",
-            storageBucket: "binance-cointracker.appspot.com",
-            messagingSenderId: "864873554352",
-            appId: "1:864873554352:web:7fa92b8948e63843d9b675",
-            measurementId: "G-HP1QJKP14J"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var firebasefiledir = firebase.database().ref('User');
+        <!-- Footer End -->
 
-        // -------------------------------------------- main configuration
-        firebase.auth().onAuthStateChanged((user)=>{
-            if(user){
-                location.replace("module/dashboard.html")
-            }
-        })
 
-        // Login
-        var logEmail;
-        var logPass;
-        function getLogEmail(e) {
-            logEmail = e.target.value;
-        }
-        function getLogPass(e) {
-            logPass = e.target.value;
-        }
-        function login(){
-            const email = logEmail;
-            const password = logPass;
-            firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(function(response){
-                console.log("success");
-            })
-            .catch((error)=>{
-                document.getElementById("error").innerHTML = error.message
-            })
-        }
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+    </div>
 
-        // Sign up
-        var dname;
-        var demail;
-        var dpassword;
-        function getName(e) {
-            dname = e.target.value;
-        }
-        function getEmail(e) {
-            demail = e.target.value;
-        }
-        function getPassword(e) {
-            dpassword = e.target.value;
-        }
-        
-        
-        function signUp(){
-            const email = demail;
-            const password = dpassword;
-            firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(function(response){
-                console.log("success");
-                firebasefiledir.push({
-                    name: dname,
-                    email: demail,
-                    password: dpassword,
-                    userstatus: false,
-                    uid: response.user.uid
-                })
-            })
-            .catch((error) => {
-                document.getElementById("error").innerHTML = error.message;
-                console.log(error);
-            });
-        }
-    </script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
 </html>

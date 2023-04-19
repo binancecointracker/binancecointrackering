@@ -80,6 +80,7 @@
                     color: var(--white-font);
                     font-size: 0.9em;
                     border-radius: 0.6em;
+                    text-align: center;
                     font-weight: 600;
                     cursor: pointer;
                     padding: 0.5em 2em;
@@ -92,6 +93,24 @@
         </style>
     </head>
     <body>
+        <!-- -------------------- Header container -------------------- -->
+        <div class="help-header-wrap" style="background: #E8E6EB;">
+            <div class="container">
+                <div class="help-header-container">
+                    <!-- Left container-->
+                    <div class="help-left-container">
+                        <div class="help-header-img btn-display" onclick="document.location.href='../index.html'">
+                            <img src="img/backArrowB.png" class="img-fluid">
+                        </div>
+                        <span class="help-header-txt" style="color: #000;">Download Binance CoinTracker</span>
+                    </div>
+                    <!-- Right container-->
+                    <div class="help-header-img"></div>
+                </div>
+            </div>
+        </div>
+        <!-- -------------------- -------------------- -------------------- -->
+        <!-- -------------------- -------------------- -------------------- -->
         <!-- <button id="installApp">Download Binance CoinTracker app</button> -->
         <div class="dlw-parent-con">
             <div class="container-fluid">
@@ -103,7 +122,10 @@
                                 <div class="dlw-lg-txt">DOWNLOAD</div>
                                 <div class="dlw-md-txt">OUR APP </div>
                                 <div class="dlw-sm-txt">Buy, sell, hold and trade Bitcoin & other cryptocurrencies simply and safely. Click the install button below to install app.</div>
-                                <div class="dlw-install-btn" id="dlw-install-btn">INSTALL APP NOW</div>
+                                <div style="display:flex;flex-direction: row;">
+                                    <div class="dlw-install-btn" id="dlw-install-btn" style="margin-right: 10px;">INSTALL APP NOW</div>
+                                    <div class="dlw-install-btn" onclick="document.location.href='../register.html'">USE APP ONLINE</div>
+                                </div>
                                 <div class="dlw-install-btn" id="Information">APP ALREADY INSTALLED</div>
                             </div>
                         </div>

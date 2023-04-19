@@ -2549,6 +2549,7 @@
         height: 2.75em;
         outline: none;
         padding: 0 0.5em 0 0.5em;
+        width: 100%;
     }
     /* -------------------- */
 
@@ -2769,7 +2770,7 @@
         background: var(--overlay-colour);
         height: 100%;
         width: 100%;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         justify-content: center;

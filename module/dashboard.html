@@ -22,7 +22,7 @@
         <!-- Title of the page -->
         <title>Binance CoinTracker</title>
     </head>
-    <body onload="popout()">
+    <body>
         <div id="preloader-background" style="justify-content: center;">
 			<div class="preload">
 				<img x="0px" y="0px" width="50px" style="position: absolute;" height="50px" src="img/binance.png" alt="" srcset="">
@@ -488,7 +488,7 @@
 
                         <div class="col-12">
                             <div class="log-bottom">
-                                <div class="log-bottom-txt">Are you sure you want to exit Binance CoinTracker?</div>
+                                <div class="log-bottom-txt">Click button again to exit Binance CoinTracker?</div>
                                 <div class="log-bottom-option">
                                     <div class="log-no" onclick="popout()">No, continue</div>
                                 </div>
@@ -763,7 +763,35 @@
 			document.getElementById("preloader-background").style.display = "none";
 		}
 		//remove/comment this one to check the website in loading state
-		window.onload = preloader();
+		window.onload = preloader(); 
+        window.onload= popout();
+        
+        
+        // Pop
+        function popin() {
+            var logg = document.getElementsByClassName("pop-out-main");
+            for (let i = 0; i < logg.length; i++) {
+                logg[i].style.display = "flex";
+            }
+        }
+        // -------------------- 
+        
+        // Pop
+        function popout() {
+            var logg = document.getElementsByClassName("pop-out-main");
+            for (let i = 0; i < logg.length; i++) {
+                logg[i].style.display = "none";
+            };
+            jQuery(document).ready(function($) {
+                if (window.history && window.history.pushState) {
+                    window.history.pushState('forward', null, './#forward');
+                    $(window).on('popstate', function() {
+                        popin();
+                    });
+                }
+            });
+        };
+        // --------------------   
     </script>
     <!-- -------------------- -------------------- -------------------- -->
     <!-- -------------------- -------------------- -------------------- -->

@@ -528,6 +528,9 @@
                     .tablet-navigation{
                         width: 0%;
                     }
+                    .add-token-right-wrap{
+                        width: 65%
+                    }
                 /*  -------------------- -------------------- -------------------- */
 
 
@@ -642,6 +645,9 @@
                     /* Nav-link to toggle between main page and settings container */
                     .responsive-navigation-menu{
                         width: 0%;
+                    }
+                    .add-token-right-wrap{
+                        width: 50%
                     }
                     /* -------------------- */
 
