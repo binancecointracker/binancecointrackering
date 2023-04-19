@@ -8,11 +8,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
         <!-- Service worker tips -->
-        <link rel="icon" href="./module/img/binance_192.png">
+        <link rel="icon" href="./img/binance_192.png">
         
         <!-- Bootstrap link -->
-        <link rel="stylesheet" href="module/css/bootstrap.css">
-        <link rel="stylesheet" href="module/css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
 
         <!-- Title of the page -->
         <title>Binance CoinTracker</title>
@@ -24,7 +24,7 @@
                 font-size: 15px;
                 line-height: 1.7;
                 color: #c4c3ca;
-                background-color: #1f2029;
+                background-color: #F8F7FA;
                 overflow-x: hidden;
             }
             a {
@@ -127,7 +127,7 @@
                 width: 100%;
                 height: 100%;
                 background-color: #2a2b38;
-                background-image: url('module/img/pat.svg');
+                background-image: url('img/pat.svg');
                 background-position: bottom center;
                 background-repeat: no-repeat;
                 background-size: 300%;
@@ -318,11 +318,11 @@
                 <div class="row full-height justify-content-center">
                     <div class="col-12 text-center align-self-center py-5">
                         <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                            <h6 class="mb-0 pb-3"><span class="cursor log-in">Log In </span><span class="cursor sign-up">Sign Up</span></h6>
+                            <h6 class="mb-0 pb-3" style="color: #000;"><span class="cursor log-in">Log In </span><span class="cursor sign-up">Sign Up</span></h6>
                             <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
                             <label for="reg-log"></label>
-                            <div class="noted">Click on the above Toggle button to switch between "Log-in" and "Registeration" pages.</div>
-                            <center><small><span id="error" style="color: red"></span></small></center>
+                            <div class="noted" style="color: #000;">Click on the above Toggle button to switch between "Log-in" and "Registration" pages.</div>
+                            <center><small><span id="error" style="color: #ff0000;text-align: center;"></span></small></center>
                             <div class="card-3d-wrap mx-auto">
                                 <div class="card-3d-wrapper">
                                     <div class="card-front">
@@ -338,7 +338,7 @@
                                                     <i class="fa-solid i input-icon fa-unlock-keyhole"></i>
                                                 </div>
                                                 <button href="#" class="btn mt-4" onclick="login()">submit</button>
-                                                <p class="mb-0 mt-4 text-center"><a onclick="document.location.href='module/js/supp.html'" class="link">Forgoten your password? Contact Support</a></p>
+                                                <p class="mb-0 mt-4 text-center"><a onclick="document.location.href='js/supp.html'" class="link">Forgoten your password? Contact Support</a></p>
                                               </div>
                                           </div>
                                       </div>
@@ -370,7 +370,7 @@
             </div>
         </div>
     </body>
-    <script src="module/js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase.js"></script>
     <script>
         // -------------------------------------------- Firebase configuration
@@ -391,7 +391,7 @@
         // -------------------------------------------- main configuration
         firebase.auth().onAuthStateChanged((user)=>{
             if(user){
-                location.replace("module/dashboard.html")
+                location.replace("dashboard.html")
             }
         })
 

@@ -16,10 +16,10 @@ class Send extends HTMLElement{
                                             <div class="help-header-img btn-display" onclick="HomeToToken()">
                                                 <img src="img/arrow-left.png" class="img-fluid">
                                             </div>
-                                            <span class="help-header-txt">Send ${ CryptoLocalData[TokenPage].symbol }</span>
+                                            <span class="help-header-txt" id="send-sss-header-txt">Send ${ CryptoLocalData[TokenPage].symbol }</span>
                                         </div>
                                         <!-- Right container-->
-                                        <div class="help-header-img">
+                                        <div class="help-header-img" id="send-sss-header-img">
                                             <img src="img/token/${ CryptoLocalData[TokenPage].img }.png" class="img-fluid">
                                         </div>
                                     </div>
@@ -33,14 +33,14 @@ class Send extends HTMLElement{
                             <!-- -------------------- Main container body -------------------- -->
                             <div class="container">
                                 <!-- Token balance-->
-                                <div class="send-token-balance"><div class="container"><span style="padding-right: 0.5em;">${ CryptoLocalData[TokenPage].symbol } Balance: </span> ${ CryptoLocalData[TokenPage].balance } ${ CryptoLocalData[TokenPage].symbol }</div></div>
+                                <div class="send-token-balance"><div class="container" id="send-zzz-xxx-ccc"><span style="padding-right: 0.5em;">${ CryptoLocalData[TokenPage].symbol } Balance: </span> ${ CryptoLocalData[TokenPage].balance } ${ CryptoLocalData[TokenPage].symbol }</div></div>
                                 <!-- -------------------- -------------------- -->
                                 <!-- -------------------- -------------------- -->
                                 
                                 <!-- Token address to send to -->
                                 <div class="send-address-input-wrap">
                                     <input placeholder="..." class="send-input" required>
-                                    <div class="send-input-absolute">${ CryptoLocalData[TokenPage].name } Address</div>
+                                    <div class="send-input-absolute" id="send-vvv-input-absolute">${ CryptoLocalData[TokenPage].name } Address</div>
                                 </div>
                                 <!-- -------------------- -------------------- -->
                                 <!-- -------------------- -------------------- -->
@@ -58,12 +58,12 @@ class Send extends HTMLElement{
                                 <!-- Amount container-->
                                 <div class="send-amount-wrap">
                                     <div class="send-amount-div-wrap">
-                                        <div class="send-amount-div">${ CryptoLocalData[TokenPage].symbol }</div>
+                                        <div class="send-amount-div" id="send-sss-amount-div">${ CryptoLocalData[TokenPage].symbol }</div>
                                         <div class="send-input-absolute">Current Token</div>
                                     </div>
                                     <div class="send-amount-input-wrap">
                                         <input type="number" placeholder="..." class="send-input" id="send-input" onkeyup="sendAmount()" required>
-                                        <div class="send-input-absolute">Send Amount (${ CryptoLocalData[TokenPage].symbol })</div>
+                                        <div class="send-input-absolute" id="send-zzz-input-absolute">Send Amount (${ CryptoLocalData[TokenPage].symbol })</div>
                                         <div class="send-input-exchange" id="send-parent-exchange"> <div id="send-input-exchange" class="one-line">≈ $0</div> <div id="send-bottom-txt" style="visibility: hidden;">Amount exceeds balance</div></div>
 
                                     </div>
@@ -82,7 +82,7 @@ class Send extends HTMLElement{
                                 <!-- Conversion rate -->
                                 <div class="send-convert-wrap">
                                     <div class="send-convert-sm-txt one-line">Fee≈ <div id="tip-token" class="one-line"> 0.0</div>/<div id="tip-curr" class="one-line">0.00</div> USD</div>
-                                    <div class="send-convert-lg-txt" class="one-line">Total≈ <div id="total-token" class="one-line">0.0</div> ${ CryptoLocalData[TokenPage].symbol }/<div id="total-curr" class="one-line">0.0</div> USD</div>
+                                    <div class="send-convert-lg-txt one-line" id="send-zzz-convert-lg-txt">Total≈ <div id="total-token" class="one-line">0.0</div> ${ CryptoLocalData[TokenPage].symbol }/<div id="total-curr" class="one-line">0.0</div> USD</div>
                                 </div>
                                 <!-- -------------------- -------------------- -->
                                 <!-- -------------------- -------------------- -->
@@ -102,7 +102,7 @@ class Send extends HTMLElement{
                                                         <img src="img/expanding-two-opposite-arrows-diagonal-symbol-of-interface.png" class="img-fluid">
                                                     </div>
                                                 </div>
-                                                <span class="receive-send-txt">Go to Receive ${ CryptoLocalData[TokenPage].symbol }</span>
+                                                <span class="receive-send-txt" id="receive-send-zzz-txt">Go to Receive ${ CryptoLocalData[TokenPage].symbol }</span>
                                             </div>
                                             <div class="receive-send-left-img">
                                                 <img src="img/backArrowB.png" class="img-fluid" style="rotate: 180deg;">

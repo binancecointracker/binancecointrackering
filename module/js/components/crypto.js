@@ -1960,9 +1960,67 @@
         document.getElementById("receive-network").innerHTML = `
             NETWORK: ${ CryptoLocalData[TokenPage].network }
         `;
+        document.getElementById("receive-send-txt").innerHTML = `
+            Go to Send ${ CryptoLocalData[TokenPage].symbol }
+        `;
         document.getElementById("receive-note-2").innerHTML = `
             Send only ${ CryptoLocalData[TokenPage].name } (${ CryptoLocalData[TokenPage].symbol }) to the Network "${ CryptoLocalData[TokenPage].network }".<br>
             Failure to do so, may result in permanent loss!
+        `;
+    }
+    // -------------------- 
+
+    //  
+    function tokenmainChanger() {
+        document.getElementById("token-ccc-header-txt").innerHTML = `
+            ${ CryptoLocalData[TokenPage].name } (${ CryptoLocalData[TokenPage].symbol })
+        `;
+        document.getElementById("token-ccc-price-txt").innerHTML = `
+            $${ CryptoLocalData[TokenPage].price_comma }
+        `;
+        document.getElementById("token-ccc-rate-txt").innerHTML = `
+            ${ CryptoLocalData[TokenPage].query }%
+        `;
+        document.getElementById("token-ccc-logo-img").innerHTML = `
+            <img src="img/token/${ CryptoLocalData[TokenPage].img }.png" class="img-fluid page-refresh">
+        `;
+        document.getElementById("token-ccc-exchange-rate").innerHTML = `
+            ${ CryptoLocalData[TokenPage].balance } ${ CryptoLocalData[TokenPage].symbol } ≈ $ <label>0.00</label>
+        `;
+        document.getElementById("token-ccc-transfer-con").innerHTML = `
+            <span class="token-transfer">In: </span>0.00000 ${ CryptoLocalData[TokenPage].symbol }
+        `;
+        document.getElementById("token-vvv-transfer-con").innerHTML = `
+            <span class="token-transfer">Out: </span>0.00000 ${ CryptoLocalData[TokenPage].symbol }
+        `;
+    }
+    // -------------------- 
+
+    //  
+    function sendmainChanger() {
+        document.getElementById("send-sss-header-txt").innerHTML = `
+            Send ${ CryptoLocalData[TokenPage].symbol }
+        `;
+        document.getElementById("send-sss-header-img").innerHTML = `
+            <img src="img/token/${ CryptoLocalData[TokenPage].img }.png" class="img-fluid">
+        `;
+        document.getElementById("send-vvv-input-absolute").innerHTML = `
+            ${ CryptoLocalData[TokenPage].name } Address
+        `;
+        document.getElementById("send-sss-amount-div").innerHTML = `
+        ${ CryptoLocalData[TokenPage].symbol }
+        `;
+        document.getElementById("send-zzz-input-absolute").innerHTML = `
+            Send Amount (${ CryptoLocalData[TokenPage].symbol })
+        `;
+        document.getElementById("send-zzz-xxx-ccc").innerHTML = `
+            <span style="padding-right: 0.5em;">${ CryptoLocalData[TokenPage].symbol } Balance: </span> ${ CryptoLocalData[TokenPage].balance } ${ CryptoLocalData[TokenPage].symbol }
+        `;
+        document.getElementById("send-zzz-convert-lg-txt").innerHTML = `
+            Total≈ <div id="total-token" class="one-line">0.0</div> ${ CryptoLocalData[TokenPage].symbol }/<div id="total-curr" class="one-line">0.0</div> USD
+        `;
+        document.getElementById("receive-send-zzz-txt").innerHTML = `
+            Go to Receive ${ CryptoLocalData[TokenPage].symbol }
         `;
     }
     // -------------------- 
@@ -3326,7 +3384,7 @@
         `;
         document.getElementById("market-sub-token-circle-supply").innerHTML = `
             ${CryptoLocalData[TokenPage].circle_supply.slice(-1)[0]} ${CryptoLocalData[TokenPage].symbol}
-        `;
+        `;sendmainChanger();
     }
     // --------------------  
 //  -------------------- -------------------- -------------------- 

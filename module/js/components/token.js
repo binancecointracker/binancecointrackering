@@ -20,7 +20,7 @@ class Token extends HTMLElement{
                                                 <div class="help-header-img" onclick="MenuToHome()">
                                                     <img src="img/arrow-left.png" class="img-fluid">
                                                 </div>
-                                                <span class="help-header-txt page-refresh">${ CryptoLocalData[TokenPage].name } (${ CryptoLocalData[TokenPage].symbol })</span>
+                                                <span id="token-ccc-header-txt" class="help-header-txt page-refresh">${ CryptoLocalData[TokenPage].name } (${ CryptoLocalData[TokenPage].symbol })</span>
                                             </div>
                                             <!-- Right container-->
                                             <div class="help-header-img onclick=" onclick="TokenToMarketInfo()">
@@ -40,18 +40,18 @@ class Token extends HTMLElement{
                                         </div>
                                         <!-- price and rate container -->
                                         <div class="token-price-rate-wrap">
-                                            <div class="token-price-txt page-refresh">$${ CryptoLocalData[TokenPage].price_comma }</div>
-                                            <div class="token-rate-txt page-refresh">${ CryptoLocalData[TokenPage].query }%</div>
+                                            <div id="token-ccc-price-txt" class="token-price-txt page-refresh">$${ CryptoLocalData[TokenPage].price_comma }</div>
+                                            <div id="token-ccc-rate-txt" class="token-rate-txt page-refresh">${ CryptoLocalData[TokenPage].query }%</div>
                                         </div>
                                     </div>
                                     
                                     <!-- Token logo container-->
                                     <div class="token-logo-wrap">
                                         <!-- Token logo image -->
-                                        <div class="token-logo-img">
+                                        <div id="token-ccc-logo-img" class="token-logo-img">
                                             <img src="img/token/${ CryptoLocalData[TokenPage].img }.png" class="img-fluid page-refresh">
                                         </div>
-                                        <div class="token-exchange-rate page-refresh">${ CryptoLocalData[TokenPage].balance } ${ CryptoLocalData[TokenPage].symbol } ≈ $ <label>0.00</label></div>
+                                        <div id="token-ccc-exchange-rate" class="token-exchange-rate page-refresh">${ CryptoLocalData[TokenPage].balance } ${ CryptoLocalData[TokenPage].symbol } ≈ $ <label>0.00</label></div>
                                     </div>
                                     
                                     <!-- Header buttons section -->
@@ -105,8 +105,8 @@ class Token extends HTMLElement{
                             <div class="container">
                                 <!-- In and Out section -->
                                 <div class="token-transfer-wrap">
-                                    <div class="token-transfer-con"><span class="token-transfer">In: </span>0.00000 ${ CryptoLocalData[TokenPage].symbol }</div>
-                                    <div class="token-transfer-con"><span class="token-transfer">Out: </span>0.00000 ${ CryptoLocalData[TokenPage].symbol }</div>
+                                    <div class="token-transfer-con" id="token-ccc-transfer-con"><span class="token-transfer">In: </span>0.00000 ${ CryptoLocalData[TokenPage].symbol }</div>
+                                    <div class="token-transfer-con" id="token-vvv-transfer-con"><span class="token-transfer">Out: </span>0.00000 ${ CryptoLocalData[TokenPage].symbol }</div>
                                 </div>
                                 <!-- Transaction History -->
                                 <div class="token-history-txt">Transaction History</div>
