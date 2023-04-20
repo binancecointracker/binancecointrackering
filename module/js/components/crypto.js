@@ -1,5 +1,5 @@
 // --------------------  - PAGE --------------------    
-    var cryptoCompare = '3786e2cde9ae5f0dca5f9984bdef3491fcb799327e150e9d12385065645d524c';
+    var cryptoCompare = 'd6383c0ff828ba9beb7c3a84ad0171e917427f3c303c070bdebd524d6d046692';
     //  
     var CryptoLocalData = [
         {
