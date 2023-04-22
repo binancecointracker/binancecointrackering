@@ -21,7 +21,7 @@
     ],
     "theme_color": "#F8F7FA",
     "background_color": "#0C0E12",
-    "start_url": "./binancecointracker/module/register.html",
+    "start_url": "/binancecointracker/module/index.html",
     "display": "standalone",
     "orientation": "portrait"
 }
