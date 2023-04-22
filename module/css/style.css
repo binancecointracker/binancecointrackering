@@ -1810,7 +1810,7 @@
         box-shadow: 0 0 1.5px 3.5px rgba(0, 0, 0, 0.075), 0 2px 4.5px 0 rgba(0, 0, 0, 0.05);
         position: fixed;
         bottom: 0px;
-        padding: 0.3em 0;
+        padding: 0.25em 0;
         width: 100%;
         height: auto;
     }
@@ -1820,14 +1820,15 @@
         flex-direction: column;
         justify-content: center;
         height: auto;
+        padding: 0.5em 2em;
         width: 100%;
     }
     .bottom-nav-btn-img{
         border-radius: 0.5em;
         display: flex;
-        height: 3.5em;
-        padding: 0.5em 2em;
-        width: 3.5em;
+        height: 2.25em;
+        z-index: 1;
+        width: 2.25em;
     }
     /* -------------------- */
 /* -------------------- -------------------- -------------------- -------------------- -------------------- */
