@@ -58,7 +58,7 @@ class Referral extends HTMLElement{
                                             <div class="refer-upper-body">
                                                 <div class="refer-invite-txt">My invitations</div>
                                                 <div class="refer-upper-row">
-                                                    <span id="refer-code-txt" class="refer-code-txt">https://binancecointracker.github.io/binancecointracker/</span>
+                                                    <span id="refer-code-txt" class="refer-code-txt one-line">https://binancecointracker.github.io/binancecointracker/</span>
                                                 </div>
                                                 <!-- Copy button -->
                                                 <div class="referral-btn" onclick="copyReferral()">
