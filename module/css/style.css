@@ -1820,15 +1820,15 @@
         flex-direction: column;
         justify-content: center;
         height: auto;
-        padding: 0.5em 2em;
+        padding: 0.5em 1em;
         width: 100%;
     }
     .bottom-nav-btn-img{
         border-radius: 0.5em;
         display: flex;
-        height: 2.25em;
+        height: 2em;
         z-index: 1;
-        width: 2.25em;
+        width: 2em;
     }
     /* -------------------- */
 /* -------------------- -------------------- -------------------- -------------------- -------------------- */
