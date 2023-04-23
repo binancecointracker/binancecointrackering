@@ -51,7 +51,7 @@ firebase.auth().onAuthStateChanged((user) => {
             
         })
     }else{
-        location.replace("./index.html")
+        location.replace("../register.html")
     }
 })
 

@@ -3289,6 +3289,17 @@
         height: 1.1em;
         width: 1.1em;
     }
+
+    /* BOTTOM */
+    #receive-qr-code-v {
+        display: none;
+    }
+    #receive-wallet-address {
+        display: none;
+    }
+    #receive-note-2 {
+        display: none;
+    }
     /* -------------------- */
 /* -------------------- -------------------- -------------------- -------------------- -------------------- */
 
